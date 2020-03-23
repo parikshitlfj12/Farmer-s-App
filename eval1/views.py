@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Sign
 
 # Create your views here.
 
@@ -15,7 +16,17 @@ def login(request) :
 def signup(request) :
     return render(request, 'signup.html')
 
-def formpost(request) :
-    user = request.POST['username']
-    passwd = request.POST['pass']
-    return HttpResponse(user + passwd)
+def signuppost(request) :
+    sign = Sign(
+        username='singhdon85',
+        email='singhdon85@gmail.com',
+        passwd='1234',
+        phone='9856985698',
+        buyorsell='Buy'
+    )
+    sign.save()
+    return render(request, 'index.html')
+
+def loginpost(request) :
+    return render(request, 'index.html')
+

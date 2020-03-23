@@ -22,5 +22,5 @@ urlpatterns = [
     path('shop.html', views.shop),
     path('login', views.login),
     path('signup', views.signup),
-    path('formpost', views.formpost)
+    path('signuppost', views.signuppost)
 ]
