@@ -9,8 +9,13 @@ def home(request) :
 def shop(request) :
     return render(request, 'shop.html')
 
-def form(request) :
-    return render(request, 'form.html')
+def login(request) :
+    return render(request, 'login.html')
+    
+def signup(request) :
+    return render(request, 'signup.html')
 
 def formpost(request) :
-    user = request
+    user = request.POST['username']
+    passwd = request.POST['pass']
+    return HttpResponse(user + passwd)

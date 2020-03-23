@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
     path('', views.home),
     path('shop.html', views.shop),
-    path('form.html', views.form),
+    path('login', views.login),
+    path('signup', views.signup),
     path('formpost', views.formpost)
 ]
