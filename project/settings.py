@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'eval1',
+    'eval1.apps.Eval1Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'eval1',
-        'USER' : 'postgres',
-        'PASSWORD' : '1234',
-        'HOST' :'localhost'
+        'NAME': 'project',
+        'USER': 'postgres',
+        'PASSWORD':'9411372899',
+        'HOST': 'localhost'
     }
 }
 
@@ -126,3 +126,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+MEDIA_URL='/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR,'media')

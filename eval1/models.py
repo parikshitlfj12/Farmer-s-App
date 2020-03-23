@@ -1,9 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class Sign( models.Model):
-    username = models.CharField(max_length=100)
-    email = models.TextField(max_length=100)
-    passwd = models.TextField(max_length=100)
-    phone = models.TextField(max_length=20)
-    buyorsell = models.TextField(max_length=10)
+class Destination(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pics')
+    desc = models.TextField()
+    price = models.IntegerField()
+    offer =models.BooleanField(default=False)
