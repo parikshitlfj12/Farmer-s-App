@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Title -->
+  <title>Happy Farm</title>
+  <!-- Favicon -->
+  <link rel="icon" href="{% static  'img/core-img/favicon.ico' %}">
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ##### Header Area Start ##### -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>Happy Farm</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sourav.y18@iiits.in</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav">
+            <!-- Nav Brand -->
+            <a href="/" class="nav-brand"><img src="{% static './img/logo.jfif' %}"alt=""></a>
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Pages</a>
+                    <ul class="dropdown">
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About Us</a></li>
+                      <li><a href="">Farming Practice</a></li>
+                      <li><a href="shop">Shop</a>
+                        <ul class="dropdown">
+                          <li><a href="">Our Products</a></li>
+                          <li><a href="shop">Shop</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="">News</a>
+                        <ul class="dropdown">
+                          <li><a href="">News</a></li>
+                          <li><a href="">News Details</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="">Contact</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="">Our Product</a></li>
+                  <li><a href="">Farming Practice</a></li>
+                  <li><a href="">News</a></li>
+                  <li><a href="">Contact</a></li>
+                </ul>
+                <!-- Cart Icon -->
+                <div id="cartIcon">
+                  <a href="#">
+                    <i class="icon_cart_alt"></i>
+                    <span class="cart-quantity">2</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Navbar End -->
+            </div>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+
+  {% block content %}
+
+
+
+  {% endblock %}
+
+
+  
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-80-0" style="background-image: url({% static 'img/bg-img/3.jpg'%});">
+      <div class="container-fluid">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3 pr-0 ">
+            <div class="footer-widget mb-80">
+              <a href="#" class="d-block m-b-30 mt-0" style="font-size:35px; color:green">Happy Farm</a>
+              <p style="font-size:16px">Happy Farm with you for you always</p>
+              <div class="contact-info">
+                <p><i class="fa fa-map-pin" aria-hidden="true"></i><span>BH1, Boys Hostel, IIIT Sricity, Andhra Pradesh, India</span></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i><span>sourav.y18@iiits.com</span></p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i><span>+84 223 9000</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul>
+                  <li><a href="#">Purchase</a></li>
+                  <li><a href="#">Policities</a></li>
+                  <li><a href="#">Shipping</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Return</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-content">
+                  <a href="#" class="post-title">WA’s largest farming business on the market</a>
+                  <div class="post-date">18 March 2020</div>
+                </div>
+              </div>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-content">
+                  <a href="#" class="post-title">Beef retail prices hit a record</a>
+                  <div class="post-date">18 March 2020</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <span>Facebook</span>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <span>Twitter</span>
+                </a>
+                <a href="#">
+                  <i class="fa fa-pinterest" aria-hidden="true"></i>
+                  <span>Pinterest</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+              <div class="footer-nav">
+                <nav>
+                  <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Produce</a></li>
+                    <li><a href="#">Practice</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jquery 2.2.4  -->
+  <script src=" {% static 'js/jquery.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src=" {% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap js -->
+  <script src=" {% static 'js/bootstrap.min.js' %}"></script>
+  <!-- Owl Carousel js -->
+  <script src=" {% static 'js/owl.carousel.min.js' %}"></script>
+  <!-- Classynav -->
+  <script src=" {% static 'js/classynav.js' %}"></script>
+  <!-- Wow js -->
+  <script src=" {% static 'js/wow.min.js' %}"></script>
+  <!-- Sticky js -->
+  <script src=" {% static 'js/jquery.sticky.js' %}"></script>
+  <!-- Magnific Popup js -->
+  <script src=" {% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <!-- Scrollup js -->
+  <script src=" {% static 'js/jquery.scrollup.min.js' %}"></script>
+  <!-- Jarallax js -->
+  <script src=" {% static 'js/jarallax.min.js' %}"></script>
+  <!-- Active js -->
+  <script src=" {% static 'js/active.js' %}"></script>
+</body>
+
+</html>
