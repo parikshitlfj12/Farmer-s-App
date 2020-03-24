@@ -1,18 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V6</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+{% extends 'hf.html' %}
+{% block content %}
+
+	{% load static %}
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/formutil.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/formmain.css'%}">
-<!--===============================================================================================-->
-</head>
-<body>
-	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formmain.css'%}">	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
@@ -61,5 +53,5 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+
+{% endblock %}
