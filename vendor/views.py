@@ -9,6 +9,22 @@ def home(request) :
 def dashboard(request): 
   return(render(request, 'vendor/vendordashboard.html'))
 
+def orders(request): 
+  return(render(request, 'vendor/orders.html'))
+
+def products(request): 
+  return(render(request, 'vendor/products.html'));
+def add_new_product(request):
+  return(render(request, 'vendor/products.html'));
+
+def coupons(request): 
+  return(render(request, 'vendor/coupons.html'))
+def add_new_coupon(request):
+  return(render(request, 'vendor/coupons.html'))
+
+def aboutme(request): 
+  return(render(request, 'vendor/aboutme.html'))
+
 def chart(request): 
   return(render(request, 'vendor/pages/charts/chartjs.html'))
 
