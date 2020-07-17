@@ -24,6 +24,7 @@ urlpatterns = [
     path('signup', views.signup),
     path('signuppost', views.signuppost),
     path('contact', views.contact),
-    path('about',views.about)
-    
+    path('about',views.about),
+    path('shop/addtocart', views.addtocart),
+    path('checkout', views.checkout)
 ]

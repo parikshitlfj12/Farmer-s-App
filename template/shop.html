@@ -40,29 +40,17 @@
             <div class="product-show">
               <h6>Showing 1–9 of 72 results</h6>
             </div>
-
-            <!-- Product View Mode -->
-            <div class="produtc-view-mode">
-              <a href="#"><i class="fa fa-th"></i></a>
-              <a href="#"><i class="fa fa-list-ul"></i></a>
-            </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <!-- Shop Sidebar Area -->
         <div class="col-12 col-md-4 col-lg-3">
-
-          <!-- Shopping Cart -->
           <div class="shopping-cart mb-50">
             <h5 class="mb-30">Shopping Cart</h5>
-            <!-- Cart Table -->
             <div class="cart-table clearfix">
               <table class="table table-responsive">
-                <!-- tbody -->
                 <tbody>
-                  <!-- Single Table Row -->
                   <tr>
                     <td class="cart_product_img">
                       <a href="#"><img src="{% static 'img/bg-img/34.jpg' %}" alt="Product"></a>
@@ -114,52 +102,10 @@
               </div>
             </div>
             <!-- Checkout -->
-            <a href="#" class="btn famie-btn checkout-btn mt-30 w-100">Checkout</a>
+            <a href="http://localhost:8000/checkout" class="btn famie-btn checkout-btn mt-30 w-100">Checkout</a>
           </div>
 
-          <!-- Single Widget Area -->
-          <div class="single-widget-area">
-            <!-- Title -->
-            <h5 class="widget-title">Catagories</h5>
-            <!-- Cata List -->
-            <ul class="cata-list shop-page">
-              <li><a href="#">All products (72)</a></li>
-              <li><a href="#">Freshy Fruits (20)</a></li>
-              <li><a href="#">Rice &amp; Corn (15)</a></li>
-              <li><a href="#">Meat &amp; Eggs (20)</a></li>
-              <li><a href="#">Milk &amp; Cheese (15)</a></li>
-              <li><a href="#">Others (2)</a></li>
-            </ul>
-          </div>
-
-          <!-- Single Widget Area -->
-          <div class="single-widget-area">
-            <!-- Title -->
-            <h5 class="widget-title">Sort by</h5>
-            <!-- Cata List -->
-            <ul class="cata-list shop-page">
-              <li><a href="#">Top rated</a></li>
-              <li><a href="#">New arrivals</a></li>
-              <li><a href="#">Alphabetically, A-Z</a></li>
-              <li><a href="#">Alphabetically, Z-A</a></li>
-              <li><a href="#">Price: low to high</a></li>
-              <li><a href="#">Price: high to low</a></li>
-            </ul>
-          </div>
-
-          <!-- Single Widget Area -->
-          <div class="single-widget-area">
-            <!-- Title -->
-            <h5 class="widget-title">Price</h5>
-            <!-- Cata List -->
-            <ul class="cata-list shop-page">
-              <li><a href="#">$0.00 - $10.00</a></li>
-              <li><a href="#">$10.00 - $50.00</a></li>
-              <li><a href="#">$50.00 - $100.00</a></li>
-              <li><a href="#">$100.00+</a></li>
-            </ul>
-          </div>
-
+          
           <!-- Single Widget Area -->
           <div class="single-widget-area">
             <!-- Title -->
@@ -192,7 +138,7 @@
                   <!-- Product Meta Data -->
                   <div class="product-meta-data">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
+                    <a href="http://localhost:8000/shop/addtocart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
                   </div>
                 </div>

@@ -16,6 +16,12 @@ def contact(request) :
 def about(request) :
     return render(request, 'about.html')
 
+def addtocart(request):
+    return render(request, 'shop.html')
+
+def checkout(request):
+    return render(request, 'checkout.html')
+
 def login(request) :
     return render(request, 'login.html')
     
