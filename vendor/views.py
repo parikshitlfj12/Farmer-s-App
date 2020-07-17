@@ -5,6 +5,11 @@ from django.http import HttpResponse
 
 def home(request) :
   return render(request, 'index.html')
+def vendor_signup(request): 
+  return(render(request, 'vendor/vendor-signup.html'))
+def vendor_login(request): 
+  return(render(request, 'vendor/vendor-login.html'))
+
 
 def dashboard(request): 
   return(render(request, 'vendor/vendordashboard.html'))

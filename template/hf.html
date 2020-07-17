@@ -7,33 +7,23 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Title -->
   <title>Happy Farm</title>
-  <!-- Favicon -->
-  <link rel="icon" href="{% static  'img/core-img/favicon.ico' %}">
-  <!-- Core Stylesheet -->
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
-  <!-- Preloader -->
   <div class="preloader d-flex align-items-center justify-content-center">
     <div class="spinner"></div>
   </div>
-
-  <!-- ##### Header Area Start ##### -->
   <header class="header-area">
-    <!-- Top Header Area -->
     <div class="top-header-area">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="top-header-content d-flex align-items-center justify-content-between">
-              <!-- Top Header Content -->
               <div class="top-header-meta">
                 <p>Welcome to <span>Happy Farm</span>, we hope you will enjoy our products and have good experience</p>
               </div>
-              <!-- Top Header Content -->
               <div class="top-header-meta text-right">
                 <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sourav.y18@iiits.in</span></a>
                 <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
@@ -43,62 +33,37 @@
         </div>
       </div>
     </div>
-
-    <!-- Navbar Area -->
-    <div class="famie-main-menu">
+    
+    <div>
       <div class="classy-nav-container breakpoint-off">
         <div class="container">
-          <!-- Menu -->
           <nav class="classy-navbar justify-content-between" id="famieNav">
-            <!-- Nav Brand -->
             <a href="/" class="nav-brand"><img src="{% static './img/logo.jfif' %}"alt=""></a>
-            <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
               <span class="navbarToggler"><span></span><span></span><span></span></span>
             </div>
-            <!-- Menu -->
             <div class="classy-menu">
-              <!-- Close Button -->
               <div class="classycloseIcon">
                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
               </div>
               <!-- Navbar Start -->
               <div class="classynav">
                 <ul>
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                      <li><a href="">Home</a></li>
-                      <li><a href="">About Us</a></li>
-                      <li><a href="">Farming Practice</a></li>
-                      <li><a href="shop">Shop</a>
-                        <ul class="dropdown">
-                          <li><a href="">Our Products</a></li>
-                          <li><a href="shop">Shop</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="">News</a>
-                        <ul class="dropdown">
-                          <li><a href="">News</a></li>
-                          <li><a href="">News Details</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="">Contact</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="">Our Product</a></li>
-                  <li><a href="">Farming Practice</a></li>
-                  <li><a href="">News</a></li>
-                  <li><a href="">Contact</a></li>
+                  <li class="active"><a href="http://localhost:8000">Home</a></li>
+                  <li><a href="http://localhost:8000/about">About</a></li>
+                  <li><a href="http://localhost:8000/shop">Shop</a></li>
+                  <li><a href="http://localhost:8000/contact">Contact</a></li>
                 </ul>
-                <!-- Cart Icon -->
                 <div id="cartIcon">
                   <a href="#">
                     <i class="icon_cart_alt"></i>
                     <span class="cart-quantity">2</span>
                   </a>
                 </div>
+                <ul style="margin-left:80px">
+                  <li class="active"><a href="http://localhost:8000/login">Login</a></li>
+                  <li><a href="http://localhost:8000/signup">SignUp</a></li>
+                </ul> 
               </div>
               <!-- Navbar End -->
             </div>
@@ -117,7 +82,6 @@
       </div>
     </div>
   </header>
-  <!-- ##### Header Area End ##### -->
 
 
   {% block content %}
@@ -126,11 +90,7 @@
 
   {% endblock %}
 
-
-  
-  <!-- ##### Footer Area Start ##### -->
   <footer class="footer-area">
-    <!-- Main Footer Area -->
     <div class="main-footer bg-img bg-overlay section-padding-80-0" style="background-image: url({% static 'img/bg-img/3.jpg'%});">
       <div class="container-fluid">
         <div class="row">
@@ -242,30 +202,23 @@
       </div>
     </div>
   </footer>
-  <!-- ##### Footer Area End ##### -->
 
-  <!-- ##### All Javascript Files ##### -->
-  <!-- jquery 2.2.4  -->
   <script src=" {% static 'js/jquery.min.js' %}"></script>
-  <!-- Popper js -->
+
   <script src=" {% static 'js/popper.min.js' %}"></script>
-  <!-- Bootstrap js -->
+
   <script src=" {% static 'js/bootstrap.min.js' %}"></script>
-  <!-- Owl Carousel js -->
+
   <script src=" {% static 'js/owl.carousel.min.js' %}"></script>
-  <!-- Classynav -->
+
   <script src=" {% static 'js/classynav.js' %}"></script>
-  <!-- Wow js -->
+
   <script src=" {% static 'js/wow.min.js' %}"></script>
-  <!-- Sticky js -->
+
   <script src=" {% static 'js/jquery.sticky.js' %}"></script>
-  <!-- Magnific Popup js -->
-  <script src=" {% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <!-- Scrollup js -->
-  <script src=" {% static 'js/jquery.scrollup.min.js' %}"></script>
-  <!-- Jarallax js -->
+
   <script src=" {% static 'js/jarallax.min.js' %}"></script>
-  <!-- Active js -->
+
   <script src=" {% static 'js/active.js' %}"></script>
 </body>
 
