@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
-# Create your views here.
+from .models import Products
+from .forms import *
 
 def home(request) :
   return render(request, 'index.html')
@@ -18,9 +18,19 @@ def orders(request):
   return(render(request, 'vendor/orders.html'))
 
 def products(request): 
-  return(render(request, 'vendor/products.html'));
+  vendorproducts = Products.objects.all()
+  return(render(request, 'vendor/products.html', {'products': vendorproducts}))
+
 def add_new_product(request):
-  return(render(request, 'vendor/products.html'));
+    if request.method == 'POST': 
+        form = ProductForm(request.POST, request.FILES) 
+        if form.is_valid(): 
+            form.save() 
+            return render(request, 'vendor/products.html') 
+    else: 
+        form = ProductForm() 
+        return render(request, 'vendor/products.html') 
+
 
 def coupons(request): 
   return(render(request, 'vendor/coupons.html'))

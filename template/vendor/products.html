@@ -8,8 +8,7 @@
     <div class="float-right mb-3">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Add Product
-      </button>
-
+      </button> 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -22,7 +21,7 @@
             </div>
             <div class="modal-body">
             <!-- Form -->
-              <form method="POST" action="http://localhost:8000/vendor/products/add-new-products/"> 
+              <form method="POST" action="http://localhost:8000/vendor/products/add-new-products/" enctype='multipart/form-data'> 
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -58,60 +57,18 @@
         </tr>
       </thead>
       <tbody>
+      {% for prod in products %}
         <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
+          <th>1</th>
+          <th>{{prod.name}}</th>
+          <th>{{prod.price}}</th>
+          <th>{{prod.stock}}</th>
+          <th>
+            <img src="../../media/{{prod.image}}">
+          </th>
         </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Fresh Apple</td>
-          <td>₹ 23</td>
-          <td>10</td>
-          <td>
-            <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-          </td>
-        </tr>
+      {% endfor %}
+      
       </tbody>
     </table>
   </div>
