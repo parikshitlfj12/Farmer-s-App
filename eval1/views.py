@@ -13,6 +13,13 @@ def shop(request) :
 def contact(request) :
     return render(request, 'contact.html')
 
+def changepass(request) :
+    return render(request, 'changepass.html')
+    
+def change(request):
+    return render(request, 'login.html')
+
+
 def about(request) :
     return render(request, 'about.html')
 

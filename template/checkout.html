@@ -3,13 +3,17 @@
 {% block content %}
 
 {% load static %}
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://localhost:8000">Home</a></li>
-    <li class="breadcrumb-item active"><a href="http://localhost:8000/shop">Shop</a></li>
-    <li class="breadcrumb-item active"><a href="http://localhost:8000/shop">CheckOut</a></li>
-  </ol>
-</nav>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="http://localhost:8000/"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="http://localhost:8000/shop">Shop</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <div class="container mt-4">
     <div class="row">
     <!--Cart-->
