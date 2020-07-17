@@ -37,12 +37,15 @@
     
     <div>
       <div class="classy-nav-container breakpoint-off">
-        <div class="container">
+        <div class="container-fluid">
           <nav class="classy-navbar justify-content-between" id="famieNav">
             <a href="/" class="nav-brand"><img src="{% static './img/logo.jfif' %}"alt=""></a>
             <div class="classy-navbar-toggler">
               <span class="navbarToggler"><span></span><span></span><span></span></span>
             </div>
+              <div class="form-group" style="margin-top:50px; margin-left:-80px">
+                <input style="height:35px; width: 450px" type="search" class="form-control" placeholder="Search Here">
+              </div>
             <div class="classy-menu">
               <div class="classycloseIcon">
                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
@@ -116,12 +119,12 @@
               <!-- Footer Widget Nav -->
               <nav class="footer-widget-nav">
                 <ul>
-                  <li><a href="#">Purchase</a></li>
-                  <li><a href="#">Policities</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Return</a></li>
-                  <li><a href="#">Careers</a></li>
+                  <li><a href="http://localhost:8000/">Home</a></li>
+                  <li><a href="http://localhost:8000/about">About</a></li>
+                  <li><a href="http://localhost:8000/shop">Shop</a></li>
+                  <li><a href="http://localhost:8000/contact">Contact Us</a></li>
+                  <li><a href="http://localhost:8000/vendor/vendor-login">Vendor Login</a></li>
+                  <li><a href="http://localhost:8000/login">User Login</a></li>
                 </ul>
               </nav>
             </div>
@@ -151,11 +154,9 @@
             </div>
           </div>
 
-          <!-- Single Footer Widget Area -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-widget mb-80">
               <h5 class="widget-title">STAY CONNECTED</h5>
-              <!-- Footer Social Info -->
               <div class="footer-social-info">
                 <a href="#">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
