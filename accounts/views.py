@@ -6,7 +6,17 @@ from django.contrib.auth.models import auth
 
 
 def userLogin(request): 
-  return render(request, 'login.html')
+  if request.method=='POST':
+    userlist = User.objects.all()
+    for user in userlist:
+      if (user.password==request.POST['passwd'] and user.name == request.POST['username']):
+        return render(request, 'index.html', {'vendor': user})
+      else:
+        messages.info(request,"Invalid User Credentials")
+        return render(request, 'login.html')
+
+  else:
+    return render(request, 'login.html')
 
 def userRegister(request):
   if request.method == 'POST':
