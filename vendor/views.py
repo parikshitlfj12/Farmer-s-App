@@ -5,12 +5,7 @@ from .forms import *
 
 def home(request) :
   return render(request, 'index.html')
-def vendor_signup(request): 
-  return(render(request, 'vendor/vendor-signup.html'))
-def vendor_login(request): 
-  return(render(request, 'vendor/vendor-login.html'))
-
-
+  
 def dashboard(request): 
   return(render(request, 'vendor/vendordashboard.html'))
 
@@ -26,7 +21,7 @@ def add_new_product(request):
         form = ProductForm(request.POST, request.FILES) 
         if form.is_valid(): 
             form.save() 
-            return render(request, 'vendor/products.html') 
+            return redirect('http://localhost:8000/vendor/products/')
     else: 
         form = ProductForm() 
         return render(request, 'vendor/products.html') 

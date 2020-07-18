@@ -18,12 +18,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home),
-    path('shop', views.shop),
-    path('contact', views.contact),
-    path('about',views.about),
-    path('shop/addtocart', views.addtocart),
-    path('checkout', views.checkout),
-    path('changepass', views.changepass),
-    path('change', views.change)
+    path('register', views.userRegister),
+    path('user-login', views.userLogin),
+    path('vendor-register', views.vendorRegister),
+    path('vendor-login', views.vendorLogin),
+    path('vendor-changepass', views.vendorChangepass),
 ]

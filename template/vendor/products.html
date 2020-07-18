@@ -47,28 +47,29 @@
       </div>
     </div>
     <table class="table">
-      <thead style="background-color:green">
+      <thead style="background-color:#5B6D7C">
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Stock</th>
-          <th scope="col">Image</th>
+          <th scope="col" style=" padding-left:50px; color:white; font-size:20px">S. No.</th>
+          <th scope="col" style=" color:white; font-size:20px">Name</th>
+          <th scope="col" style=" color:white; font-size:20px">Price</th>
+          <th scope="col" style=" color:white; font-size:20px">Stock</th>
+          <th scope="col" style=" color:white; font-size:20px">Image</th>
+          <th scope="col" style=" color:white; font-size:20px">Status</th>
         </tr>
       </thead>
       <tbody>
       {% for prod in products %}
         <tr>
-          <th>1</th>
+          <th style=" padding-left:50px"> 1</th>
           <th>{{prod.name}}</th>
           <th>{{prod.price}}</th>
           <th>{{prod.stock}}</th>
           <th>
             <img src="../../media/{{prod.image}}">
           </th>
+          <th><span class="badge badge-pill badge-primary">True</span></th>
         </tr>
       {% endfor %}
-      
       </tbody>
     </table>
   </div>

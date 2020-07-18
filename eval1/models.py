@@ -7,3 +7,4 @@ class Sign( models.Model):
     passwd = models.TextField(max_length=100)
     phone = models.TextField(max_length=20)
     buyorsell = models.TextField(max_length=10)
+
