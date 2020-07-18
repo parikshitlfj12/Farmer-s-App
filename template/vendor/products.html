@@ -5,8 +5,8 @@
 {% block content %}
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="float-right mb-3">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <div class="float-right"> 
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Add Product
       </button> 
       <!-- Modal -->
@@ -28,6 +28,10 @@
                   <input type="name" name="name" class="form-control" placeholder="Enter name">
                 </div>
                 <div class="form-group">
+                  <label for="desc">Description</label>
+                  <input type="text" name="desc" class="form-control" placeholder="Enter Description for your product">
+                </div>
+                <div class="form-group">
                   <label for="price">Price</label>
                   <input type="number" name="price" class="form-control" placeholder="Enter price">
                 </div>
@@ -46,33 +50,40 @@
         </div>
       </div>
     </div>
-    <table class="table">
-      <thead style="background-color:#5B6D7C">
-        <tr>
-          <th scope="col" style=" padding-left:50px; color:white; font-size:20px">S. No.</th>
-          <th scope="col" style=" color:white; font-size:20px">Name</th>
-          <th scope="col" style=" color:white; font-size:20px">Price</th>
-          <th scope="col" style=" color:white; font-size:20px">Stock</th>
-          <th scope="col" style=" color:white; font-size:20px">Image</th>
-          <th scope="col" style=" color:white; font-size:20px">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for prod in products %}
-        <tr>
-          <th style=" padding-left:50px"> 1</th>
-          <th>{{prod.name}}</th>
-          <th>{{prod.price}}</th>
-          <th>{{prod.stock}}</th>
-          <th>
-            <img src="../../media/{{prod.image}}">
-          </th>
-          <th><span class="badge badge-pill badge-primary">True</span></th>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
   </div>
+  <div class="card">
+      <div class="card-body">
+      <h4 class="card-title" style='font-size:20px'>Products Table</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th> Image </th>
+              <th> Name </th>
+              <th> Description </th>
+              <th> Price </th>
+              <th> Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for prod in products %}
+            <tr>
+              <td class="py-1">
+                <img src="../../media/{{prod.image}}">
+              <td> {{prod.name}} </td>
+              <td>{{prod.desc}}</td>
+              <td>
+                ₹ {{prod.price}}.00
+              </td>
+              <td>
+                {{prod.stock}} Units
+              </td>
+              
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>
       
 {% endblock %}

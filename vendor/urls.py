@@ -27,6 +27,5 @@ urlpatterns = [
     path('aboutme/', views.aboutme),
     path('chart/', views.chart),
     path('table/', views.table),
-    path('products/add-new-products/',views.add_new_product),
-    path('coupons/add-new-coupon/', views.add_new_coupon)
+    path('products/add-new-products/',views.add_new_product)
 ]

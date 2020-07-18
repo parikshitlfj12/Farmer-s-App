@@ -31,17 +31,18 @@ def add_new_product(request):
     if request.method == 'POST': 
         form = ProductForm(request.POST, request.FILES) 
         if form.is_valid(): 
-            form.save() 
-            return redirect('http://localhost:8000/vendor/products/')
+          form.save() 
+          return redirect('http://localhost:8000/vendor/products/')
     else: 
         form = ProductForm() 
         return render(request, 'vendor/products.html') 
 
 
 def coupons(request): 
-  return(render(request, 'vendor/coupons.html'))
-def add_new_coupon(request):
-  return(render(request, 'vendor/coupons.html'))
+  if request.method == "POST":
+    return(render(request, 'vendor/coupons.html'))
+  else: 
+    return(render(request, 'vendor/coupons.html'))
 
 def aboutme(request): 
   return(render(request, 'vendor/aboutme.html'))

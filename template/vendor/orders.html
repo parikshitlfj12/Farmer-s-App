@@ -7,53 +7,54 @@
 <div class="main-panel">
   <div class="content-wrapper">
    <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th> User </th>
-                          <th> Name </th>
-                          <th> Mode </th>
-                          <th> Product List </th>
-                          <th> Total Price </th>
-                          <th> Status </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      {% for order in orderlist %}
-                        <tr>
-                          <td class="py-1">
-                            <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
-                          <td> {{order.name}} </td>
-                          <td>
-                            <btn class="btn btn-primary">{{order.mode}}</btn>
-                          </td>
-                          <td>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                              Bucket
-                            </button>
-                            <div class="collapse" id="collapseExample" style="margin-left:-80px">
-                            <table class="table pr-5">
-                              <tbody style=''>
-                              {% for x in order.list %}
-                                <tr>
-                                  <td style="text-align:center"><span>{{x}}<span></td>
-                                </tr>
-                              {% endfor %}
-                              </tbody>
-                            </table>
-                            </div>
-                          </td>
-                          <td style='padding: 12px 15px 12px 35px'> ₹ {{order.totalprice}} </td>
-                          <td><span class="badge badge-success">Success</span></td>
-                        </tr>
-                      {% endfor %}
-                      </tbody>
-                    </table>
+      <div class="card">
+        <div class="card-body">
+        <h4 class="card-title" style='font-size:20px'>Orders Table</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> User </th>
+                <th> Name </th>
+                <th> Mode </th>
+                <th> Product List </th>
+                <th> Total Price </th>
+                <th> Status </th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for order in orderlist %}
+              <tr>
+                <td class="py-1">
+                  <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
+                <td> {{order.name}} </td>
+                <td>
+                  <btn class="btn btn-primary">{{order.mode}}</btn>
+                </td>
+                <td>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Bucket
+                  </button>
+                  <div class="collapse" id="collapseExample" style="margin-left:-80px">
+                  <table class="table pr-5">
+                    <tbody style=''>
+                    {% for x in order.list %}
+                      <tr>
+                        <td style="text-align:center"><span>{{x}}<span></td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
                   </div>
-                </div>
-              </div>
+                </td>
+                <td style='padding: 12px 15px 12px 35px'> ₹ {{order.totalprice}} </td>
+                <td><span class="badge badge-success">Success</span></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
       

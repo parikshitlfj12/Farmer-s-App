@@ -6,96 +6,99 @@
 <div class="main-panel">
   <div class="content-wrapper">
     <div class="row">
-      <div class="col-md-12 grid-margin">
+      <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <div class="row">
-              <div class="col-lg-3 col-md-6">
-                <div class="d-flex">
-                  <div class="wrapper">
-                    <h3 class="mb-0 font-weight-semibold">32,451</h3>
-                    <h5 class="mb-0 font-weight-medium text-primary">Visits</h5>
-                    <p class="mb-0 text-muted">+14.00(+0.50%)</p>
-                  </div>
-                  <div class="wrapper my-auto ml-auto ml-lg-4">
-                    <canvas height="50" width="100" id="stats-line-graph-1"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                <div class="d-flex">
-                  <div class="wrapper">
-                    <h3 class="mb-0 font-weight-semibold">15,236</h3>
-                    <h5 class="mb-0 font-weight-medium text-primary">Impressions</h5>
-                    <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                  </div>
-                  <div class="wrapper my-auto ml-auto ml-lg-4">
-                    <canvas height="50" width="100" id="stats-line-graph-2"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                <div class="d-flex">
-                  <div class="wrapper">
-                    <h3 class="mb-0 font-weight-semibold">7,688</h3>
-                    <h5 class="mb-0 font-weight-medium text-primary">Conversation</h5>
-                    <p class="mb-0 text-muted">+57.62(+0.76%)</p>
-                  </div>
-                  <div class="wrapper my-auto ml-auto ml-lg-4">
-                    <canvas height="50" width="100" id="stats-line-graph-3"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                <div class="d-flex">
-                  <div class="wrapper">
-                    <h3 class="mb-0 font-weight-semibold">1,553</h3>
-                    <h5 class="mb-0 font-weight-medium text-primary">Downloads</h5>
-                    <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                  </div>
-                  <div class="wrapper my-auto ml-auto ml-lg-4">
-                    <canvas height="50" width="100" id="stats-line-graph-4"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h4 class="card-title">Basic Table</h4>
+            <p class="card-description"> table of <code>.stactics</code> </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Profile</th>
+                  <th>VatNo.</th>
+                  <th>Created</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jacob</td>
+                  <td>53275531</td>
+                  <td>12 May 2017</td>
+                  <td>
+                    <label class="badge badge-danger">Pending</label>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body pb-0">
-                <div class="d-flex justify-content-between">
-                  <h4 class="card-title mb-0">Total Revenue</h4>
-                  <p class="font-weight-semibold mb-0">+1.37%</p>
-                </div>
-                <h3 class="font-weight-medium mb-4">184.42K</h3>
-              </div>
-              <canvas class="mt-n4" height="90" id="total-revenue"></canva>
-            </div>
-          </div>
-          <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body pb-0">
-                <div class="d-flex justify-content-between">
-                  <h4 class="card-title mb-0">Transaction</h4>
-                  <p class="font-weight-semibold mb-0">-2.87%</p>
-                </div>
-                <h3 class="font-weight-medium">147.7K</h3>
-              </div>
-              <canvas class="mt-n3" height="90" id="total-transaction"></canva>
-            </div>
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description"> Add class <code>.table-hover</code> </p>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Product</th>
+                  <th>Sale</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Photoshop</td>
+                  <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i>
+                  </td>
+                  <td>
+                    <label class="badge badge-danger">Pending</label>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      
-    </div>  
-    </div>
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Striped Table</h4>
+            <p class="card-description"> Add class <code>.table-striped</code> </p>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th> User </th>
+                  <th> First name </th>
+                  <th> Progress </th>
+                  <th> Amount </th>
+                  <th> Deadline </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-1">
+                    <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
+                  <td> Herman Beck </td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td> $ 77.99 </td>
+                  <td> May 15, 2015 </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
       
