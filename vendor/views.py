@@ -2,12 +2,21 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Products
 from .forms import *
-
-def home(request) :
-  return render(request, 'index.html')
   
+def signOut(request):
+  del request.session['vendor_is_logged']
+  response = redirect('http://localhost:8000/account/vendor-login')
+  response.set_cookie('vendorloggedin', False)
+  return response
+
 def dashboard(request): 
-  return(render(request, 'vendor/vendordashboard.html'))
+  if request.session.has_key('vendor_is_logged'):
+    vendorname = request.COOKIES['vendorname']
+    vendorpassword = request.COOKIES['vendorpassword']
+    logoutbutton = "LogOut"
+    return render(request, 'vendor/vendordashboard.html', {'username': vendorname, 'password': vendorpassword, 'logout': logoutbutton})
+  else:
+    return redirect('http://localhost:8000/account/vendor-login')
 
 def orders(request): 
   return(render(request, 'vendor/orders.html'))

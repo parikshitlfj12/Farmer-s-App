@@ -51,7 +51,12 @@ def vendorLogin(request):
     name = ''
     for vendor in vendorlist:
       if (vendor.password==request.POST['passwd'] and vendor.name == request.POST['username']):
-        return render(request, 'vendor/vendordashboard.html', {'vendor': vendor})
+        request.session['vendor_is_logged'] = True
+        response = redirect('http://localhost:8000/vendor/')
+        response.set_cookie('vendorloggedin', True)
+        response.set_cookie('vendorname', vendor.name)
+        response.set_cookie('vendorpassword', vendor.password)
+        return response
       else:
         messages.info(request,"Invalid Vendor Credentials")
         return render(request, 'vendor/vendor-login.html')
