@@ -15,6 +15,20 @@ def home(request) :
     else:
         return render(request, 'index.html')
 
+def myorders(request): 
+    if request.session.has_key('is_Logged'):
+        name = request.COOKIES['username']
+        password = request.COOKIES['password']
+        logoutbutton = "LogOut"
+        allorders = UserOrders.objects.all()
+        specificorders = []
+        for everyorder in allorders:
+            if everyorder.name == name:
+                specificorders.append(everyorder)
+        return render(request, 'myorders.html', {'username': name, 'password': password, 'logout': logoutbutton, 'orderlist': specificorders})
+    else:
+        return render(request, 'login.html')
+
 def shop(request) :
     if request.method == 'POST':
         if request.session.has_key('is_Logged'):
@@ -103,7 +117,6 @@ def pay(request):
         list=[]
         for x in cart: 
             list.append(x)
-        print(list)
         order = UserOrders()
         order.name = name = request.COOKIES['username']
         order.mode = 'Cash On Delivery'
@@ -113,4 +126,23 @@ def pay(request):
         del request.session['cart']
         return redirect('http://localhost:8000')
     elif mode == 'paypal':
-        return HttpResponse("Kr rha hu")
+        cart = request.session['cart']
+        list=[]
+        for x in cart: 
+            list.append(x)
+        order = UserOrders()
+        order.name = name = request.COOKIES['username']
+        order.mode = 'PayPal'
+        order.list = list
+        order.totalprice = totalprice
+        order.save()
+        # Make Payments
+        del request.session['cart']
+        response = render(request, 'test.html')
+        totstr = str(totalprice)
+        response.set_cookie('total', totstr)
+        return response
+
+def test(request):
+    total = request.COOKIES['total']
+    return render(request, 'test.html',{'totalamount', totalstr})

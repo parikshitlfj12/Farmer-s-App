@@ -71,6 +71,9 @@
                   <li><a href="http://localhost:8000/account/register">SignUp</a></li>
                 {% endif %}
                   <li><a href="http://localhost:8000/account/logout">{{logout}}</a></li>
+                {% if logout %}
+                  <li><a href="http://localhost:8000/orders">My Orders</a></li>
+                  {% endif %}
                 </ul> 
               </div>
               <!-- Navbar End -->

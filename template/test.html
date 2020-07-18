@@ -1,0 +1,52 @@
+{% extends 'hf.html'%}
+
+{% block content %}
+
+{% load static %}
+<div class="card" style="width: 30rem; padding: 50px 20px 30px 20px; margin-left: 33%;margin-top: 60px; margin-bottom:60px">
+  <div class="card-body">
+    <h3 class="card-title">Check Here</h3>
+    <p>This will redirect you to paypal to make payments...</p><br><br>
+    <div id="paypal-button-container"></div>
+  </div>
+</div>
+    
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&disable-funding=card"></script>
+
+    <script>
+    var total = {{totalamount}}
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+            style: {
+              color:'blue',
+              shape: 'rect'
+            },
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '205'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                    window.location = "http://localhost:8000/";
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+{% endblock %}
+
+<!--sb-o94k02659435@personal.example.com-->
+<!--N@1/8HYb-->

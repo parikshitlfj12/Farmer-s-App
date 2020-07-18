@@ -1,0 +1,47 @@
+{% extends 'hf.html'%}
+
+{% block content %}
+
+{% load static %}
+
+    <h2 style="margin-left: 50px; margin-top: 30px">My Orders</h2>
+<div class="card container mt-3">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">User Name</th>
+          <th scope="col">Method Of Payment</th>
+          <th scope="col">Products</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for order in orderlist%}
+        <tr>
+          <td>{{order.name}}</td>
+          <td>{{order.mode}}</td>
+          <td>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Bucket
+            </button>
+            <div class="collapse" id="collapseExample" style="margin-left:-120px">
+            <table class="table pr-5">
+              <tbody style=''>
+              {% for x in order.list %}
+                <tr>
+                  <td style="text-align:center"><span>{{x}}<span></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+            </div>
+          </td>
+          <td>{{order.totalprice}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
