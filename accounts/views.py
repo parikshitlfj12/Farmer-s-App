@@ -15,6 +15,7 @@ def userLogin(request):
     userlist = User.objects.all()
     for user in userlist:
       if (user.password==request.POST['passwd'] and user.name == request.POST['username']):
+        request.session.clear()
         request.session['is_Logged'] = True
         response = redirect('http://localhost:8000/')
         response.set_cookie('userloggedin', True)

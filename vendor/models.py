@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 class Products(models.Model):
@@ -7,3 +8,7 @@ class Products(models.Model):
   stock = models.IntegerField()
   image = models.ImageField(upload_to='pics')
 
+class UserOrders(models.Model):
+  name = models.CharField(max_length=100)
+  mode = models.CharField(max_length=100)
+  list = ArrayField(ArrayField(models.CharField(max_length=20, blank=True),size=8,),size=8,)
