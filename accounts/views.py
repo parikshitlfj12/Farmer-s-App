@@ -1,19 +1,31 @@
 from django.shortcuts import render, redirect
 from .models import User, VendorUser
 from django.contrib import messages
+from django.contrib.sessions.models import Session
 from django.contrib.auth.models import auth
+from django.template import RequestContext
 # Create your views here.
 
+def logout(request):
+  del request.session['is_Logged']
+  return render(request, 'index.html')
 
 def userLogin(request): 
   if request.method=='POST':
     userlist = User.objects.all()
     for user in userlist:
       if (user.password==request.POST['passwd'] and user.name == request.POST['username']):
-        return render(request, 'index.html', {'vendor': user})
+        request.session['is_Logged'] = True
+        response = redirect('http://localhost:8000/')
+        response.set_cookie('userloggedin', True)
+        response.set_cookie('username', user.name)
+        response.set_cookie('password', user.password)
+        return response
       else:
         messages.info(request,"Invalid User Credentials")
-        return render(request, 'login.html')
+        response = render(request, 'login.html')
+        response.set_cookie('isLogged', False)
+        return response
 
   else:
     return render(request, 'login.html')

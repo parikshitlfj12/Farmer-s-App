@@ -1,16 +1,29 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Sign
+from django.contrib.sessions.models import Session
 from vendor.models import Products
 
 # Create your views here.
 
 def home(request) :
-    return render(request, 'index.html')
+    if request.session.has_key('is_Logged'):
+        name = request.COOKIES['username']
+        password = request.COOKIES['password']
+        logoutbutton = "LogOut"
+        return render(request, 'index.html', {'username': name, 'password': password, 'logout': logoutbutton})
+    else:
+        return render(request, 'index.html')
 
 def shop(request) :
-    allproducts = Products.objects.all()
-    return render(request, 'shop.html', {'allproducts': allproducts})
+    if request.session.has_key('is_Logged'):
+        name = request.COOKIES['username']
+        password = request.COOKIES['password']
+        logoutbutton = "LogOut"
+        allproducts = Products.objects.all()
+        return render(request, 'shop.html', {'allproducts': allproducts, 'username': name, 'password': password, 'logout': logoutbutton})
+    else:
+        return render(request, 'login.html')
 
 def contact(request) :
     return render(request, 'contact.html')

@@ -20,6 +20,8 @@ from . import views
 urlpatterns = [
     path('register', views.userRegister),
     path('user-login', views.userLogin),
+    path('logout', views.logout),
+    
     path('vendor-register', views.vendorRegister),
     path('vendor-login', views.vendorLogin),
     path('vendor-changepass', views.vendorChangepass),
