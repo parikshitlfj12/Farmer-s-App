@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Products
+from .models import Products, UserOrders
 from .forms import *
   
 def signOut(request):
@@ -19,7 +19,9 @@ def dashboard(request):
     return redirect('http://localhost:8000/account/vendor-login')
 
 def orders(request): 
-  return(render(request, 'vendor/orders.html'))
+  order = UserOrders.objects.all()
+  
+  return(render(request, 'vendor/orders.html', {'orderlist': order}))
 
 def products(request): 
   vendorproducts = Products.objects.all()

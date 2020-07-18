@@ -12,3 +12,4 @@ class UserOrders(models.Model):
   name = models.CharField(max_length=100)
   mode = models.CharField(max_length=100)
   list = ArrayField(ArrayField(models.CharField(max_length=20, blank=True),size=8,),size=8,)
+  totalprice = models.IntegerField()

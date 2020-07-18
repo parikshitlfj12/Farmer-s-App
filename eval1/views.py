@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Sign
 from django.contrib.sessions.models import Session
@@ -77,16 +77,21 @@ def addtocart(request):
 
 def checkout(request):
     if request.session.has_key('cart'):
-        cartitems = request.session['cart']
-        aallproducts = Products.objects.all()
-        nameprice = {}
-        total = 0
-        for item in cartitems:
-            for prod in aallproducts:
-                if item == prod.name:
-                    nameprice[item] = prod.price
-                    total += prod.price
-        return render(request, 'checkout.html', {'cartitems': nameprice, 'total': total})
+        if request.session.has_key('is_Logged'):
+            name = request.COOKIES['username']
+            password = request.COOKIES['password']
+            logoutbutton = "LogOut"
+
+            cartitems = request.session['cart']
+            aallproducts = Products.objects.all()
+            nameprice = {}
+            total = 0
+            for item in cartitems:
+                for prod in aallproducts:
+                    if item == prod.name:
+                        nameprice[item] = prod.price
+                        total += prod.price
+            return render(request, 'checkout.html', {'cartitems': nameprice, 'total': total, 'username': name, 'password': password, 'logout': logoutbutton})
     else:
         return render(request, 'checkout.html')
 
@@ -103,8 +108,9 @@ def pay(request):
         order.name = name = request.COOKIES['username']
         order.mode = 'Cash On Delivery'
         order.list = list
+        order.totalprice = totalprice
         order.save()
         del request.session['cart']
-        return render(request, 'index.html')
+        return redirect('http://localhost:8000')
     elif mode == 'paypal':
         return HttpResponse("Kr rha hu")
