@@ -9,7 +9,15 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" method="POST" action="loginpost">
+				<div class='mb-3 ml-4'>
+				
+					{% for message in messages%}
+						<button class="btn btn-danger">
+							{{message}} Try Again.
+						</button>
+					{% endfor %}
+				</div>
+				<form class="login100-form validate-form" method="POST" action="vendor-login">
 				{% csrf_token %}
 					<span class="login100-form-title p-b-70">
 						Vendor Log-In
