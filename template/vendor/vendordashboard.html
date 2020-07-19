@@ -4,29 +4,30 @@
 
 {% block content %}
 <div class="main-panel">
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
     <div class="row">
       <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Basic Table</h4>
-            <p class="card-description"> table of <code>.stactics</code> </p>
+            <h4 class="card-title">Vendor Details</h4>
+            <a style='margin-top:-20px' href="http://localhost:8000/vendor/aboutme" class="badge badge-primary float-right">Show more</a>
+            <p class="card-description"> Basic details this<code>.this vendor</code> </p>
             <table class="table">
               <thead>
                 <tr>
-                  <th>Profile</th>
-                  <th>VatNo.</th>
-                  <th>Created</th>
+                  <th>Vendor Name</th>
+                  <th>Phone</th>
+                  <th>Experience</th>
                   <th>Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Jacob</td>
-                  <td>53275531</td>
-                  <td>12 May 2017</td>
+                  <td>{{vendorname}}</td>
+                  <td>+91 789474859</td>
+                  <td>Several Years</td>
                   <td>
-                    <label class="badge badge-danger">Pending</label>
+                    <label class="badge badge-danger">Active</label>
                   </td>
                 </tr>
                 
@@ -38,25 +39,25 @@
       <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Hoverable Table</h4>
-            <p class="card-description"> Add class <code>.table-hover</code> </p>
+            <h4 class="card-title">Sales Analysis</h4>
+            <p class="card-description"> Based on past orders for<code>.this order</code> </p>
             <table class="table table-hover">
               <thead>
                 <tr>
                   <th>User</th>
-                  <th>Product</th>
+                  <th>Net Sales</th>
                   <th>Sale</th>
-                  <th>Status</th>
+                  <th>Outcome</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Jacob</td>
-                  <td>Photoshop</td>
-                  <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i>
+                  <td>{{vendorname}}</td>
+                  <td>{{ordlen}}</td>
+                  <td class="text-success"> 28.76% <i class="mdi mdi-arrow-up"></i>
                   </td>
                   <td>
-                    <label class="badge badge-danger">Pending</label>
+                    <label class="badge badge-success">Growth</label>
                   </td>
                 </tr>
                 
@@ -65,37 +66,55 @@
           </div>
         </div>
       </div>
+      {% comment %} Done {% endcomment %}
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Striped Table</h4>
-            <p class="card-description"> Add class <code>.table-striped</code> </p>
+            <h4 class="card-title">Customers</h4>
+            <p class="card-description"> List of some customer for <code>.this vendor</code> </p>
+            <a style='margin-top:-60px' href="http://localhost:8000/vendor/orders" class="badge badge-primary float-right">Show more</a>
             <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th> User </th>
-                  <th> First name </th>
-                  <th> Progress </th>
-                  <th> Amount </th>
-                  <th> Deadline </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="py-1">
-                    <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
-                  <td> Herman Beck </td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                  <td> $ 77.99 </td>
-                  <td> May 15, 2015 </td>
-                </tr>
-                
-              </tbody>
-            </table>
+            <thead>
+              <tr>
+                <th> User </th>
+                <th> Name </th>
+                <th> Mode </th>
+                <th> Product List </th>
+                <th> Total Price </th>
+                <th> Status </th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for order in orderlist %}
+              <tr>
+                <td class="py-1">
+                  <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
+                <td> {{order.name}} </td>
+                <td>
+                  <btn class="btn btn-primary">{{order.mode}}</btn>
+                </td>
+                <td>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Bucket
+                  </button>
+                  <div class="collapse" id="collapseExample" style="margin-left:-80px">
+                  <table class="table pr-5">
+                    <tbody style=''>
+                    {% for x in order.list %}
+                      <tr>
+                        <td style="text-align:center"><span>{{x}}<span></td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                  </div>
+                </td>
+                <td style='padding: 12px 15px 12px 35px'> ₹ {{order.totalprice}} </td>
+                <td><span class="badge badge-success">Success</span></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
           </div>
         </div>
       </div>
