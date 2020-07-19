@@ -6,7 +6,8 @@ from vendor.models import Products, UserOrders
 from .forms import Form
 from project.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
-
+from twilio.rest import Client
+import random
 # Create your views here.
 
 def home(request) :
@@ -39,9 +40,11 @@ def shop(request) :
             password = request.COOKIES['password']
             logoutbutton = "LogOut"
             allproducts = Products.objects.all()
-
+            name = []
+            for x in allproducts:
+                name.append(x.name)
             cart = request.session.get('cart')
-            Product = request.POST['product']
+            Product = random.choice(name) 
             if cart:
                 quantity = cart.get(Product)
                 if quantity:
@@ -54,8 +57,13 @@ def shop(request) :
 
             request.session['cart'] = cart
             cartitems = request.session['cart']
-            print("cart items ==> ", cartitems)
-            return render(request, 'shop.html', {'allproducts': allproducts, 'username': name, 'password': password, 'logout': logoutbutton, 'cartitems': cartitems})
+            pri = 0
+            for x,y in cartitems.items():
+                for prod in allproducts:
+                    if prod.name == x:
+                        cartitems[x] = prod.price
+                        pri += prod.price
+            return render(request, 'shop.html', {'allproducts': allproducts, 'username': name, 'password': password, 'logout': logoutbutton, 'cartitems': cartitems, 'pri': pri})
 
         else:
             return render(request, 'login.html')
@@ -67,7 +75,6 @@ def shop(request) :
             allproducts = Products.objects.all()
             if request.session.has_key('cart'):
                 cartitems = request.session['cart']
-                print("cart items ==> ", cartitems)
                 return render(request, 'shop.html', {'allproducts': allproducts, 'username': name, 'password': password, 'logout': logoutbutton, 'cartitems': cartitems})
             else:
                 return render(request, 'shop.html', {'allproducts': allproducts, 'username': name, 'password': password, 'logout': logoutbutton})
@@ -80,12 +87,30 @@ def shop(request) :
 def contact(request) :
     sub = Form()
     if request.method == 'POST':
-        sub = Form(request.POST)
-        subject = 'Happy Farm Welcomes You.'
-        message = 'Thank you for contacting us! Our Customer Care Support will shortly call you.'
-        recepient = str(sub['Email'].value())
-        send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently = False)
-        return render(request, 'index.html', {'recepient': recepient})
+        # # Send Mail
+        # sub = Form(request.POST)
+        # subject = 'Happy Farm Welcomes You.'
+        # message = 'Thank you for contacting us! Our Customer Care Support will shortly call you.'
+        # recepient = str(sub['Email'].value())
+        # send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+        # # Send SMS
+        # username = request.POST['name']
+        # email = request.POST['Email']
+        # phone = request.POST['phone']
+
+        # client = Client()
+        # sms = client.messages.create(
+        #     from_ = '+12019077950',
+        #     body= 'Greetings, Welcome to happy farm. You requested us to call you back for information about our platform. Our Customer care services will shortly call you. Thank you for contacting Happy Farm. Have a good day. Thank YOu.',
+        #     to='+917357989911'
+        # )
+        # print(sms.sid)
+
+
+        return HttpResponse("Success")
+
+        # 
+        # return render(request, 'index.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})
     # return render(request, 'contact.html')
 
@@ -150,11 +175,11 @@ def pay(request):
         order.save()
         # Make Payments
         del request.session['cart']
-        response = render(request, 'test.html')
-        totstr = str(totalprice)
-        response.set_cookie('total', totstr)
+        response = render(request, 'test.html', {'totalamount': totalprice})
         return response
 
 def test(request):
     total = request.COOKIES['total']
-    return render(request, 'test.html',{'totalamount', totalstr})
+    print('Test sections========')
+    print("TOTAL PRICE", total)
+    return render(request, 'test.html',{'totalamount': total})

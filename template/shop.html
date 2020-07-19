@@ -51,52 +51,14 @@
             <div class="cart-table clearfix">
               <table class="table table-responsive">
                 <tbody>
-                  {% comment %} <tr>
-                    <td class="cart_product_img">
-                      <a href="#"><img src="{% static 'img/bg-img/34.jpg' %}" alt="Product"></a>
-                    </td>
-                    <td class="cart_product_desc">
-                      <p>Bayonne Ham</p>
-                      <h6>1 x $39.99</h6>
-                    </td>
-                    <td class="pro-close">
-                      <a href="#"><i class="icon_close"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Single Table Row -->
-                  <tr>
-                    <td class="cart_product_img">
-                      <a href="#"><img src="{% static 'img/bg-img/35.jpg' %}" alt="Product"></a>
-                    </td>
-                    <td class="cart_product_desc">
-                      <p>Bayonne Ham</p>
-                      <h6>1 x $39.99</h6>
-                    </td>
-                    <td class="pro-close">
-                      <a href="#"><i class="icon_close"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Single Table Row -->
+                  {% for name, price in cartitems.items %}
                   <tr>
                     <td class="cart_product_img">
                       <a href="#"><img src="{% static 'img/bg-img/36.jpg' %}" alt="Product"></a>
                     </td>
                     <td class="cart_product_desc">
-                      <p>Bayonne Ham</p>
-                      <h6>1 x $39.99</h6>
-                    </td>
-                    <td class="pro-close">
-                      <a href="#"><i class="icon_close"></i></a>
-                    </td>
-                  </tr> {% endcomment %}
-                  {% for item in cartitems %}
-                  <tr>
-                    <td class="cart_product_img">
-                      <a href="#"><img src="{% static 'img/bg-img/36.jpg' %}" alt="Product"></a>
-                    </td>
-                    <td class="cart_product_desc">
-                      <p>{{item}}</p>
-                      <h6>1 x $39.99</h6>
+                      <p>{{name}}</p>
+                      <h6>₹ {{price}}</h6>
                     </td>
                   </tr>
                   {% endfor %}
@@ -109,7 +71,7 @@
                 <h6>SUBTOTAL</h6>
               </div>
               <div class="total-price">
-                <h6>$52.99</h6>
+                <h6>₹ {{pri}}</h6>
               </div>
             </div>
             <!-- Checkout -->
@@ -133,24 +95,20 @@
           </div>
 
         </div>
-        <!-- Shop Products Area -->
         <div class="col-12 col-md-8 col-lg-9">
           <div class="row">
             {% for prod in allproducts %}
               <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-product-area mb-50">
-                  <!-- Product Thumbnail -->
                   <div class="product-thumbnail">
                     <img src="../../media/{{prod.image}}" alt="">
-                    <div class="product-meta-data">
+                    <div class="product-meta-data" style='width:100%'>
                       <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
-                      <!-- ADd to cart-->
                       <form action='/shop' method="POST">
                       {% csrf_token %}
                         <input type='text' name="product" value='Buns' style="display:none">
                         <button class='btn btn-dark btn-sm' type='submit' data-toggle="tooltip">Add to Cart</button>
                       </from>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
                     </div>
                   </div>
                   <!-- Product Description -->

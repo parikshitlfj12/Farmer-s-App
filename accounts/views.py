@@ -13,20 +13,23 @@ def logout(request):
 def userLogin(request): 
   if request.method=='POST':
     userlist = User.objects.all()
+    flag = 0
     for user in userlist:
+      print("UESRS ARE ====", user.name)
       if (user.password==request.POST['passwd'] and user.name == request.POST['username']):
         request.session.clear()
+        flag = 1
         request.session['is_Logged'] = True
         response = redirect('http://localhost:8000/')
         response.set_cookie('userloggedin', True)
         response.set_cookie('username', user.name)
         response.set_cookie('password', user.password)
         return response
-      else:
-        messages.info(request,"Invalid User Credentials")
-        response = render(request, 'login.html')
-        response.set_cookie('isLogged', False)
-        return response
+    if flag == 0:
+      messages.info(request,"Invalid User Credentials")
+      response = render(request, 'login.html')
+      response.set_cookie('isLogged', False)
+      return response
 
   else:
     return render(request, 'login.html')
@@ -40,7 +43,7 @@ def userRegister(request):
     user.phone = request.POST['phone']
     user.address = request.POST['address']
     user.save()
-    return redirect('/login')
+    return redirect('/account/user-login')
   else: 
     return render(request, 'signup.html')
   
@@ -49,18 +52,19 @@ def userRegister(request):
 def vendorLogin(request): 
   if request.method=='POST':
     vendorlist = VendorUser.objects.all()
-    name = ''
+    flag = 0
     for vendor in vendorlist:
       if (vendor.password==request.POST['passwd'] and vendor.name == request.POST['username']):
         request.session['vendor_is_logged'] = True
         response = redirect('http://localhost:8000/vendor/')
+        flag = 1
         response.set_cookie('vendorloggedin', True)
         response.set_cookie('vendorname', vendor.name)
         response.set_cookie('vendorpassword', vendor.password)
         return response
-      else:
-        messages.info(request,"Invalid Vendor Credentials")
-        return render(request, 'vendor/vendor-login.html')
+    if flag == 0:
+      messages.info(request,"Invalid Vendor Credentials")
+      return render(request, 'vendor/vendor-login.html')
 
   else:
     return render(request, 'vendor/vendor-login.html')
