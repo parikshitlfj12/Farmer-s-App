@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'vendors/iconfonts/mdi/css/materialdesignicons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/shared/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/demo_1/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shared/style_customer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/demo_1/style_customer.css' %}">
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
   </head>
   <body>
     <div>
       <nav class="navbar default-layout col-lg-12 col-12 p-0 d-flex flex-row" style='position: relative; box-shadow: 2px 2px 20px black'>
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" s>
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" >
          <img src="{% static 'img/logo3.png' %}" height='120px' style="margin-top:-30px"> 
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
           <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block"><h4 style="font-weight:bold; color: #444444; background: #FFFFFF; text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;">Vendor Service Panel</h4></li>
+            <li class="nav-item font-weight-semibold d-none d-lg-block"><h4 style="font-weight:bold; color: #444444; background: #FFFFFF; text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;">Customer Service Panel</h4></li>
           </ul>
           <form class="ml-auto search-form d-none d-md-block" action="#">
             <div class="form-group">
@@ -34,11 +34,9 @@
                   <p class="mb-1 mt-3 font-weight-semibold"> {{vendorname}}</p>
                   <p class="font-weight-light text-muted mb-0">parikshitlfj@gmail.com</p>
                 </div>
-                <a class="dropdown-item" href="http://localhost:8000/vendor/aboutme/">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item" href="http://localhost:8000/vendor/products/">Have<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item" href="http://localhost:8000/vendor/orders/">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item" href="http://localhost:8000/vendor/">Dashboard<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item" href="http://localhost:8000/vendor/signout/">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+                <a class="dropdown-item" href="http://localhost:8000/customerservice/aboutme/">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                <a class="dropdown-item" href="http://localhost:8000/customerservice/">Dashboard<i class="dropdown-item-icon ti-help-alt"></i></a>
+                <a class="dropdown-item" href="http://localhost:8000/customerservice/signout/">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
               </div>
             </li>
           </ul>
@@ -52,7 +50,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile" style="margin-top:30px">
-              <a href="#" class="nav-link">
+              <a href="http://localhost:8000/customerservice/aboutme/" class="nav-link">
                 <div class="profile-image">
                   <img class="img-xs rounded-circle" src="{% static 'img/avatar1.png'%}" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
@@ -65,31 +63,19 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8000/vendor/dashboard/">
+              <a class="nav-link" href="http://localhost:8000/customerservice/dashboard/">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8000/vendor/products/">
-                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Products</span>
+              <a class="nav-link" href="http://localhost:8000/customerservice/customerlist/">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Customers</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8000/vendor/orders/">
-                <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Orders</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8000/vendor/coupons/">
-                <i class="menu-icon typcn typcn-bell"></i>
-                <span class="menu-title">Coupons</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8000/vendor/aboutme/">
+              <a class="nav-link" href="http://localhost:8000/customerservice/aboutme/">
                 <i class="menu-icon typcn typcn-user-outline"></i>
                 <span class="menu-title">About Me</span>
               </a>

@@ -84,7 +84,7 @@
             <div class="section-heading">
               <p>Contact now</p>
               <h2><span>Get In Touch</span> With Us</h2>
-              <img src="img/core-img/decor.png" alt="">
+              <img src="{% static 'img/core-img/decor.png' %}" alt="">
             </div>
             <!-- Contact Form Area -->
             <div class="contact-form-area">
@@ -96,6 +96,12 @@
                   </div>
                   <div class="col-lg-6">
                     <input type="email" class="form-control" name="Email" placeholder="Your Email" required id="id_Email">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control" name="age" placeholder="Your Age" required id="id_Email">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control" name="gender" placeholder="Gender (Male, Female)" required id="id_Email">
                   </div>
                   <div class="col-12">
                     <input type="text" class="form-control" name="state" placeholder="Your State">

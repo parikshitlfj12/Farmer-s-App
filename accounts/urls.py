@@ -25,4 +25,8 @@ urlpatterns = [
     path('vendor-register', views.vendorRegister),
     path('vendor-login', views.vendorLogin),
     path('vendor-changepass', views.vendorChangepass),
+
+    path('customer-register', views.customerRegister),
+    path('customer-login', views.customerLogin),
+    path('customer-changepass', views.customerChangepass),
 ]

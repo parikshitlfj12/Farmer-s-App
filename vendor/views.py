@@ -59,9 +59,3 @@ def aboutme(request):
   else:
     return redirect('http://localhost:8000/')
 
-def chart(request): 
-  return(render(request, 'vendor/pages/charts/chartjs.html'))
-
-def table(request): 
-  return(render(request, 'vendor/pages/tables/basic-table.html'))
-

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Sign
+from .models import Sign, Customer
 from django.contrib.sessions.models import Session
 from vendor.models import Products, UserOrders
 from .forms import Form
@@ -96,10 +96,6 @@ def contact(request) :
 
         
         # # Send SMS
-        # username = request.POST['name']
-        # email = request.POST['Email']
-        # phone = request.POST['phone']
-
         # client = Client()
         # sms = client.messages.create(
         #     from_ = '+12019077950',
@@ -108,9 +104,17 @@ def contact(request) :
         # )
         # print(sms.sid)
 
-
-        return HttpResponse("Success")
-
+        customer = Customer()
+        customer.username = request.POST['name']
+        customer.email = request.POST['Email']
+        customer.state = request.POST['state']
+        customer.postal = request.POST['postal']
+        customer.phone = request.POST['phone']
+        customer.age = request.POST['age']
+        customer.gender = request.POST['gender']
+        customer.address = request.POST['address']
+        customer.save()
+        return redirect('http://localhost:8000')
         # 
         # return render(request, 'index.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})

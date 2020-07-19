@@ -25,7 +25,5 @@ urlpatterns = [
     path('products/', views.products),
     path('coupons/', views.coupons),
     path('aboutme/', views.aboutme),
-    path('chart/', views.chart),
-    path('table/', views.table),
     path('products/add-new-products/',views.add_new_product)
 ]

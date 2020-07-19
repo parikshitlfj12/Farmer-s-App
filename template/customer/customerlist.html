@@ -1,0 +1,77 @@
+{% extends './sidennav.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block content %}
+<div class="main-panel">
+  <div class="content-wrapper" style="background: -webkit-linear-gradient(#868F96 , #596164);">
+   <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+        <h4 class="card-title" style='font-size:20px'>All Customers</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> User </th>
+                <th> Name </th>
+                <th> Gender </th>
+                <th> Age </th>
+                <th> Phone </th>
+                <th> Address </th>
+                <th> Postal Code </th>
+                <th> State </th>
+                <th> Status </th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for order in customerlist %}
+              <tr>
+                <td class="py-1">
+                  <img src="{% static 'img/faces-clipart/pic-1.png' %}" alt="image" /> </td>
+                <td> {{order.username}} </td>
+                
+                <td>
+                  {{order.age}}
+                </td>
+                <td>
+                  {{order.gender}}
+                </td>
+                <td>
+                  <span class="badge badge-success">{{order.phone}}</span>
+                </td>
+                <td>
+                  {{order.address}}
+                </td>
+                <td>
+                  {{order.postal}}
+                </td>
+                <td>
+                  {{order.state}}
+                </td>
+                  <td>
+                    <input type='hidden' value='{{order.username}}' name='username'> 
+                    {% if not order.status %}
+                    <button id='{{order.phone}}' onclick="changestatus(this.id)" class="btn btn-danger btn-sm" style="padding:4px ;font-size:12px">Pending</button>
+                    {% endif %}
+                    {% if order.status %}
+                    <button id='{{order.phone}}' onclick="changestatus(this.id)" type='submit' class="btn btn-info btn-sm" style="padding:4px ;font-size:12px">Completed</button>
+                    {% endif %}
+                  </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function changestatus(id) {
+    document.getElementById(id).className = 'btn btn-success';
+    document.getElementById(id).innerHTML = 'Success';
+  
+}
+</script>
+{% endblock %}

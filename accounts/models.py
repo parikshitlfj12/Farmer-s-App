@@ -14,3 +14,10 @@ class VendorUser(models.Model):
   password = models.CharField(max_length=100)
   phone = models.CharField(max_length=30)
   address = models.CharField(max_length=100)
+
+class CustomerProfile(models.Model):
+  name = models.CharField(max_length=100)
+  email = models.CharField(max_length=100)
+  password = models.CharField(max_length=100)
+  phone = models.CharField(max_length=30)
+  address = models.CharField(max_length=100)

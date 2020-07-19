@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'accounts',
     'eval1',
     'vendor',
+    'customerservice',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

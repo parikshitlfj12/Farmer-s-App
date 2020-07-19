@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import User, VendorUser
+from .models import User, VendorUser, CustomerProfile
 from django.contrib import messages
 from django.contrib.sessions.models import Session
 from django.contrib.auth.models import auth
@@ -84,3 +84,44 @@ def vendorRegister(request):
 
 def vendorChangepass(request): 
   return render(request,'vendor/vendor-changepass.html')
+
+
+
+
+
+# Customer Login
+def customerLogin(request): 
+  if request.method=='POST':
+    customerlist = CustomerProfile.objects.all()
+    flag = 0
+    for customer in customerlist:
+      if (customer.password==request.POST['passwd'] and customer.name == request.POST['username']):
+        request.session['customer_is_logged'] = True
+        response = redirect('http://localhost:8000/customerservice/')
+        flag = 1
+        response.set_cookie('customerloggedin', True)
+        response.set_cookie('customername', customer.name)
+        response.set_cookie('customerpassword', customer.password)
+        return response
+    if flag == 0:
+      messages.info(request,"Invalid customer Credentials")
+      return render(request, 'customer/customer-login.html')
+  
+  else:
+    return render(request, 'customer/customer-login.html')
+
+def customerRegister(request):
+  if request.method == 'POST':
+    customeruser = CustomerProfile()
+    customeruser.name = request.POST['username']
+    customeruser.email = request.POST['email']
+    customeruser.password = request.POST['passwd']
+    customeruser.phone = request.POST['phone']
+    customeruser.address = request.POST['address']
+    customeruser.save()
+    return render(request, 'customer/customer-login.html')
+  else: 
+    return render(request, 'customer/customer-signup.html')
+
+def customerChangepass(request): 
+  return render(request,'customer/customer-changepass.html')
