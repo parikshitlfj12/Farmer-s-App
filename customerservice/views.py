@@ -15,7 +15,7 @@ def dashboard(request):
   if request.session.has_key('customer_is_logged'):
     customerlist = Customer.objects.all()
     custlen = len(customerlist)
-    customerlist = customerlist[:1]
+    customerlist = customerlist[:4]
     customername = request.COOKIES['customername']
     customerpassword = request.COOKIES['customerpassword']
     logoutbutton = "LogOut"
