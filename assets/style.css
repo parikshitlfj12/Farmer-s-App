@@ -246,36 +246,6 @@ input:focus {
     -ms-transform: scale(1);
     transform: scale(1);
     opacity: 0; } }
-.section-heading {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 50px; }
-  .section-heading p {
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 0; }
-  .section-heading h2 {
-    margin-bottom: 10px;
-    font-size: 36px;
-    margin-left: -3px; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .section-heading h2 {
-        font-size: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .section-heading h2 {
-        font-size: 30px; } }
-    .section-heading h2 span {
-      color: #77b122; }
-    @media only screen and (max-width: 767px) {
-      .section-heading h2 {
-        font-size: 24px; } }
-  .section-heading.white h2,
-  .section-heading.white p {
-    color: #ffffff; }
-    .section-heading.white h2 span,
-    .section-heading.white p span {
-      color: #ffffff; }
 
 #scrollUp {
   background-color: #77b122;
@@ -405,7 +375,8 @@ input:focus {
   .header-area .famie-main-menu {
     position: relative;
     width: 100%; }
-    .header-area .famie-main-menu .classy-nav-container {
+    .header-area .famie-main-menu .classy-nav-
+     {
       position: relative;
       z-index: 1; }
       .header-area .famie-main-menu .classy-nav-container .container {
@@ -596,7 +567,9 @@ input:focus {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 300px; }
+  height: 300px;
+  border: 4px solid #77b122 ;
+   }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .breadcrumb-area {
       height: 240px; } }
@@ -665,7 +638,8 @@ input:focus {
 
 .benefits-thumbnail {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+   border: 4px solid #77b122 ; }
   .benefits-thumbnail img {
     border-radius: 3px; }
 
@@ -681,32 +655,6 @@ input:focus {
       .single-benefits-area h5 {
         font-size: 18px; } }
 
-.famie-video-play {
-  position: relative;
-  z-index: 1;
-  border-radius: 50%; }
-  .famie-video-play::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-    top: 0;
-    left: 0; }
-  .famie-video-play img {
-    border-radius: 50%; }
-  .famie-video-play .play-icon {
-    position: absolute;
-    font-size: 40px;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 99; }
 
 .services-area {
   position: relative;
@@ -907,7 +855,8 @@ input:focus {
           -ms-flex: 0 0 50px;
           flex: 0 0 50px;
           max-width: 50px;
-          width: 50px; } }
+          width: 50px;
+           } }
       .testimonial-slides .single-slide .testi-text .quote-icon img {
         width: auto !important; }
     .testimonial-slides .single-slide .testi-text h5 {
@@ -926,14 +875,16 @@ input:focus {
       .testimonial-slides .single-slide .testimonial-thumbnail-name {
         margin-left: 50px; } }
     .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail {
-      width: 90px;
-      border-radius: 50%;
-      border: 3px solid #77b122; }
+      width: 10%;
+      height: 10%;
+      border-radius: 20%;
+      border: 3px solid #ff8c00; }
       @media only screen and (max-width: 767px) {
         .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail {
-          width: 60px; } }
+          width: 90px;
+          height: 90px; } }
       .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail img {
-        border-radius: 50%; }
+        border-radius: 20%; }
     .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name {
       margin-left: 30px; }
       @media only screen and (max-width: 767px) {
@@ -946,7 +897,7 @@ input:focus {
           .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h5 {
             font-size: 16px; } }
       .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h6 {
-        color: #77b122;
+        color: #ff8c00;
         margin-bottom: 0; }
         @media only screen and (max-width: 767px) {
           .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h6 {
@@ -984,68 +935,6 @@ input:focus {
 
 .about-us-thumbnail img {
   width: 100%; }
-
-.single-team-member {
-  position: relative;
-  z-index: 1; }
-  .single-team-member .team-img {
-    position: relative;
-    z-index: 1; }
-    .single-team-member .team-img img {
-      width: 100%; }
-    .single-team-member .team-img::after {
-      -webkit-transition-duration: 500ms;
-      -o-transition-duration: 500ms;
-      transition-duration: 500ms;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      content: '';
-      top: 0;
-      left: 0;
-      z-index: 2;
-      opacity: 0;
-      visibility: hidden; }
-    .single-team-member .team-img .team-social-info {
-      position: absolute;
-      z-index: 99;
-      top: 20px;
-      left: 20px;
-      -webkit-transition-duration: 500ms;
-      -o-transition-duration: 500ms;
-      transition-duration: 500ms;
-      opacity: 0;
-      visibility: hidden; }
-      .single-team-member .team-img .team-social-info a {
-        display: block;
-        width: 30px;
-        height: 30px;
-        border: 1px solid #ffffff;
-        color: #ffffff;
-        text-align: center;
-        line-height: 30px;
-        margin-bottom: 15px;
-        border-radius: 50%; }
-        .single-team-member .team-img .team-social-info a:focus, .single-team-member .team-img .team-social-info a:hover {
-          background-color: #77b122;
-          color: #ffffff;
-          border-color: #77b122; }
-  .single-team-member .team-member-info {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    margin-top: 30px; }
-    .single-team-member .team-member-info h6 {
-      font-weight: 400;
-      color: #707070;
-      margin-bottom: 0; }
-  .single-team-member:focus .team-img::after, .single-team-member:hover .team-img::after {
-    visibility: visible;
-    opacity: 1; }
-  .single-team-member:focus .team-img .team-social-info, .single-team-member:hover .team-img .team-social-info {
-    visibility: visible;
-    opacity: 1; }
 
 /* Accordians */
 .single-accordion.panel {

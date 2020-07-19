@@ -89,21 +89,25 @@
             <!-- Contact Form Area -->
             <div class="contact-form-area">
               <form action="#" method="post">
+              {% csrf_token %}
                 <div class="row">
                   <div class="col-lg-6">
                     <input type="text" class="form-control" name="name" placeholder="Your Name">
                   </div>
                   <div class="col-lg-6">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email">
+                    <input type="email" class="form-control" name="Email" placeholder="Your Email" required id="id_Email">
                   </div>
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Your Subject">
+                    <input type="text" class="form-control" name="state" placeholder="Your State">
                   </div>
                   <div class="col-12">
-                    <textarea name="message" class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <input type="text" class="form-control" name="postal" placeholder="Your Postal Code">
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn famie-btn">Send Message</button>
+                    <input type="text" class="form-control" name="address" placeholder="Your Address">
+                  </div>
+                  <div class="col-12">
+                    <input type="submit" name="Subscribe" class = 'btn btn-primary'>
                   </div>
                 </div>
               </form>

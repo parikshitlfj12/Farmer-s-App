@@ -5,7 +5,7 @@
   {% load static %}
 
   <!-- ##### Breadcrumb Area Start ##### -->
-  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('img/bg-img/18.jpg');">
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({%static 'img/bg-img/fruits1.jpg'%});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-12">
           <div class="benefits-thumbnail mb-50">
-            <img src="img/bg-img/2.jpg" alt="">
+            <img src="{%static 'img/bg-img/wht.jpg' %}" alt="">
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="100ms">
-            <img src="img/core-img/digger.png" alt="">
+            <img src="{%static 'img/core-img/digger.png' %}" alt="">
             <h5>Best Services</h5>
           </div>
         </div>
@@ -51,7 +51,7 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="300ms">
-            <img src="img/core-img/windmill.png" alt="">
+            <img src="{%static 'img/core-img/windmill.png' %}" alt="">
             <h5>Farm Experiences</h5>
           </div>
         </div>
@@ -59,7 +59,7 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="500ms">
-            <img src="img/core-img/cereals.png" alt="">
+            <img src="{%static 'img/core-img/cereals.png' %}" alt="">
             <h5>100% Natural</h5>
           </div>
         </div>
@@ -67,7 +67,7 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="700ms">
-            <img src="img/core-img/tractor.png" alt="">
+            <img src="{%static 'img/core-img/tractor.png' %}" alt="">
             <h5>Farm Equipment</h5>
           </div>
         </div>
@@ -75,7 +75,7 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="900ms">
-            <img src="img/core-img/sunrise.png" alt="">
+            <img src="{%static 'img/core-img/sunrise.png' %}" alt="">
             <h5>Organic food</h5>
           </div>
         </div>
@@ -95,11 +95,10 @@
             <!-- Section Heading -->
             <div class="section-heading">
               <p>About us</p>
-              <h2><span>Let Us</span> Tell You Our Story</h2>
+              <h2><span style="#">This Is</span>  Our Story</h2>
               <img src="img/core-img/decor.png" alt="">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam nunc elit, pretium atlanta urna veloci, fermentum malesuda mina. Donec auctor nislec neque sagittis, sit amet dapibus pellentesque donal feugiat. Nulla mollis magna non
-              sanaliquet, volutpat do zutum, ultrices consectetur, ultrices at purus.</p>
+            <p>We,bunch of students from IIIT Sricity present this website .This innovation mainly deals with the problems faced by the farmers and small scale dealers.This forum bridges the gap between the farmers and the buyers.We proudly say that  this innovation belongs  "TO THE FARMERS ,FOR THE FARMERS."</p>
             <a href="#" class="btn famie-btn mt-30">Read More</a>
           </div>
         </div>
@@ -107,7 +106,7 @@
         <!-- Famie Video Play -->
         <div class="col-12 col-md-4">
           <div class="famie-video-play mb-100">
-            <img src="img/bg-img/6.jpg" alt="">
+            <img src="{% static 'img/bg-img/6.jpg' %}" alt="">
             <!-- Play Icon -->
             <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="play-icon"><i class="fa fa-play"></i></a>
           </div>
@@ -119,7 +118,7 @@
   <!-- ##### About Us Area End ##### -->
 
   <!-- ##### Testimonial Area Start ##### -->
-  <section class="testimonial-area bg-img bg-overlay section-padding-100 jarallax" style="background-image: url('img/bg-img/15.jpg');">
+  <section class="testimonial-area bg-img bg-overlay section-padding-100 jarallax" style="background-image: url({% static 'img/bg-img/fruits.jpg' %});">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -131,18 +130,17 @@
               <!-- Testimonial Text -->
               <div class="testi-text d-flex">
                 <div class="quote-icon">
-                  <img src="img/core-img/quote.png" alt="">
+                  <img src="{% static 'img/core-img/quote.png'%}" alt="">
                 </div>
-                <h5>"Thank you for your organic products. My children like your products and they use for breakfast. We are loving the pure milk, freshly fruit and of course our staple, Brown Rice Bread. Your Gluten Free breads truly make me feel
-                  lighter and uplifted. It's the only bread I plan to eat for the rest of my life. I will use them for many years."</h5>
+                <h5>"Thank you for your organic products. My family likes these products very much.We order frequently from this forum ,as this is very conveinent and the quality of fruits,vegetables and staples as well are extremely good. I will use them for many years."</h5>
               </div>
               <!-- Testimonial Thumbnail Name -->
               <div class="testimonial-thumbnail-name d-flex align-items-center">
                 <div class="testimonial-thumbnail">
-                  <img src="img/bg-img/16.jpg" alt="">
+                  <img src="{% static 'img/bg-img/101.jpg'%}" alt="">
                 </div>
                 <div class="testimonial-name">
-                  <h5>Mrs Lara Sullivan</h5>
+                  <h5>Mr. Rajeev</h5>
                   <h6>Customer</h6>
                 </div>
               </div>
@@ -153,19 +151,18 @@
               <!-- Testimonial Text -->
               <div class="testi-text d-flex">
                 <div class="quote-icon">
-                  <img src="img/core-img/quote.png" alt="">
+                  <img src="{% static 'img/core-img/quote.png'%}" alt="">
                 </div>
-                <h5>"Thank you for your organic products. My children like your products and they use for breakfast. We are loving the pure milk, freshly fruit and of course our staple, Brown Rice Bread. Your Gluten Free breads truly make me feel
-                  lighter and uplifted. It's the only bread I plan to eat for the rest of my life. I will use them for many years."</h5>
+                <h5>"This forum gave my financial condition a economical boom , as I can connect to the buyers directly and gain more surplus without any mideators."</h5>
               </div>
               <!-- Testimonial Thumbnail Name -->
               <div class="testimonial-thumbnail-name d-flex align-items-center">
                 <div class="testimonial-thumbnail">
-                  <img src="img/bg-img/16.jpg" alt="">
+                  <img src="{% static 'img/bg-img/105.jpg'%}" alt="">
                 </div>
                 <div class="testimonial-name">
-                  <h5>Ajoy Das</h5>
-                  <h6>Client</h6>
+                  <h5>Mr. Abhinav </h5>
+                  <h6>Vender</h6>
                 </div>
               </div>
             </div>
@@ -175,19 +172,18 @@
               <!-- Testimonial Text -->
               <div class="testi-text d-flex">
                 <div class="quote-icon">
-                  <img src="img/core-img/quote.png" alt="">
+                  <img src="{% static 'img/core-img/quote.png'%}" alt="">
                 </div>
-                <h5>"Thank you for your organic products. My children like your products and they use for breakfast. We are loving the pure milk, freshly fruit and of course our staple, Brown Rice Bread. Your Gluten Free breads truly make me feel
-                  lighter and uplifted. It's the only bread I plan to eat for the rest of my life. I will use them for many years."</h5>
+                <h5>"This website made the purchasing of staples more economic,cheap and convienent ."</h5>
               </div>
               <!-- Testimonial Thumbnail Name -->
               <div class="testimonial-thumbnail-name d-flex align-items-center">
                 <div class="testimonial-thumbnail">
-                  <img src="img/bg-img/16.jpg" alt="">
+                  <img src="{% static 'img/bg-img/104.jpg' %}" alt="">
                 </div>
                 <div class="testimonial-name">
-                  <h5>Akash Khan</h5>
-                  <h6>Customer</h6>
+                  <h5>Mr. Agraj</h5>
+                  <h6>Buyer</h6>
                 </div>
               </div>
             </div>
@@ -200,27 +196,26 @@
   <!-- ##### Testimonial Area End ##### -->
 
   <!-- ##### Team Member Area Start ##### -->
-  <section class="team-member-area section-padding-100-0">
-    <div class="container">
+  <section class="team-member-area section-padding-100-0 ">
+    <div class="container" >
       <div class="row">
         <div class="col-12">
           <!-- Section Heading -->
           <div class="section-heading text-center">
             <p>MEET OUR TEAM</p>
             <h2><span>The Great Team</span> Will Always Help You</h2>
-            <img src="img/core-img/decor2.png" alt="">
+            <img src="{% static 'img/core-img/decor2.png'%}" alt="">
           </div>
         </div>
       </div>
 
-      <div class="row">
-
+      <div class="row justify-content-center">
         <!-- Single Team Member -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="100ms">
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-team-member mb-100  wow fadeInUp  "   data-wow-delay="100ms">
             <!-- Team Thumbnail -->
             <div class="team-img">
-              <img src="img/bg-img/20.jpg" alt="">
+              <img src="{% static 'img/bg-img/20.jpg' %}" style="border:none" alt="">
               <!-- Social Info -->
               <div class="team-social-info">
                 <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -230,18 +225,18 @@
             </div>
             <!-- Team Member Info -->
             <div class="team-member-info">
-              <h5>Carlos Bacca</h5>
-              <h6>Coordinator</h6>
+              <h5>Parikshit Singh</h5>
+              <h6>Frontend Developer</h6>
             </div>
           </div>
         </div>
 
         <!-- Single Team Member -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="300ms">
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-team-member mb-100 wow fadeInUp  " data-wow-delay="300ms">
             <!-- Team Thumbnail -->
             <div class="team-img">
-              <img src="img/bg-img/21.jpg" alt="">
+              <img src="{% static 'img/bg-img/21.jpg' %}" style="border:none"  alt="">
               <!-- Social Info -->
               <div class="team-social-info">
                 <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -251,18 +246,18 @@
             </div>
             <!-- Team Member Info -->
             <div class="team-member-info">
-              <h5>Emilia Clarke</h5>
-              <h6>Controller</h6>
+              <h5>Tanishq Kadlag </h5>
+              <h6>Backend Developer</h6>
             </div>
           </div>
         </div>
 
         <!-- Single Team Member -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="500ms">
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-team-member mb-100  wow fadeInUp " data-wow-delay="500ms">
             <!-- Team Thumbnail -->
             <div class="team-img">
-              <img src="img/bg-img/22.jpg" alt="">
+              <img src="{% static 'img/bg-img/22.jpg' %}" style="border:none"  alt="">
               <!-- Social Info -->
               <div class="team-social-info">
                 <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -272,18 +267,18 @@
             </div>
             <!-- Team Member Info -->
             <div class="team-member-info">
-              <h5>Brian Doherty</h5>
-              <h6>Sales Executive</h6>
+              <h5>Ayush Gairola</h5>
+              <h6>Backend Developer</h6>
             </div>
           </div>
         </div>
 
         <!-- Single Team Member -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="700ms">
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-team-member mb-100 wow fadeInUp " data-wow-delay="700ms">
             <!-- Team Thumbnail -->
             <div class="team-img">
-              <img src="img/bg-img/23.jpg" alt="">
+              <img src="{% static 'img/bg-img/23.jpg' %}" style="border:none"  alt="">
               <!-- Social Info -->
               <div class="team-social-info">
                 <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -293,8 +288,28 @@
             </div>
             <!-- Team Member Info -->
             <div class="team-member-info">
-              <h5>Mary O’Connor</h5>
-              <h6>Plan Manager</h6>
+              <h5>Shubham Kawatgi</h5>
+              <h6>Backend Developer</h6>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-12 col-sm-4 col-lg">
+          <div class="single-team-member mb-100 wow fadeInUp " data-wow-delay="700ms">
+            <!-- Team Thumbnail -->
+            <div class="team-img">
+              <img src="{% static 'img/bg-img/39.jpg'%}" style="border:none"  alt="">
+              <!-- Social Info -->
+              <div class="team-social-info">
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </div>
+            <!-- Team Member Info -->
+            <div class="team-member-info">
+              <h5>Saurav Yadav</h5>
+              <h6>Frontend Developer</h6>
             </div>
           </div>
         </div>
@@ -303,4 +318,84 @@
     </div>
   </section>
   <!-- ##### Team Member Area End ##### -->
+<style>
+.section-heading h2 span {
+      color: #ff8c00; }
+
+
+.single-team-member {
+  position: relative;
+  z-index: 1;
+  border-width: 2px;
+   }
+  .single-team-member .team-img {
+    position:relative;
+    z-index: 1;
+    width: 180px;
+    height: 220px;
+    border-color: black;
+     }
+    .single-team-member .team-img img {
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      box-shadow: 8px 8px 10px grey
+      }
+    .single-team-member .team-img::after {
+      -webkit-transition-duration: 500ms;
+      -o-transition-duration: 500ms;
+      transition-duration: 500ms;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      content: '';
+      top: 0;
+      left: 0;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+       }
+    .single-team-member .team-img .team-social-info {
+      position: absolute;
+      z-index: 99;
+      top: 20px;
+      left: 20px;
+      -webkit-transition-duration: 500ms;
+      -o-transition-duration: 500ms;
+      transition-duration: 500ms;
+      opacity: 0;
+      visibility: hidden; }
+      .single-team-member .team-img .team-social-info a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 15px;
+        border-radius: 50%; }
+        .single-team-member .team-img .team-social-info a:focus, .single-team-member .team-img .team-social-info a:hover {
+          background-color: #77b122;
+          color: #ffffff;
+          border-color: #77b122;
+          
+           }
+  .single-team-member .team-member-info {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 30px; }
+    .single-team-member .team-member-info h6 {
+      font-weight: 400;
+      color: #707070;
+      margin-bottom: 0; }
+  .single-team-member:focus .team-img::after, .single-team-member:hover .team-img::after {
+    visibility: visible;
+    opacity: 1; }
+  .single-team-member:focus .team-img .team-social-info, .single-team-member:hover .team-img .team-social-info {
+    visibility: visible;
+    opacity: 1; }</style>
+
 {% endblock %}

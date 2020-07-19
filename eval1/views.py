@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from .models import Sign
 from django.contrib.sessions.models import Session
 from vendor.models import Products, UserOrders
+from .forms import Form
+from project.settings import EMAIL_HOST_USER
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -75,7 +78,16 @@ def shop(request) :
 
 
 def contact(request) :
-    return render(request, 'contact.html')
+    sub = Form()
+    if request.method == 'POST':
+        sub = Form(request.POST)
+        subject = 'Happy Farm Welcomes You.'
+        message = 'Thank you for contacting us! Our Customer Care Support will shortly call you.'
+        recepient = str(sub['Email'].value())
+        send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+        return render(request, 'index.html', {'recepient': recepient})
+    return render(request, 'contact.html', {'form':sub})
+    # return render(request, 'contact.html')
 
 def changepass(request) :
     return render(request, 'changepass.html')

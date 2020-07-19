@@ -266,7 +266,7 @@ input:focus {
       .section-heading h2 {
         font-size: 30px; } }
     .section-heading h2 span {
-      color: #77b122; }
+      color: #ff8c00; }
     @media only screen and (max-width: 767px) {
       .section-heading h2 {
         font-size: 24px; } }
@@ -405,7 +405,8 @@ input:focus {
   .header-area .famie-main-menu {
     position: relative;
     width: 100%; }
-    .header-area .famie-main-menu .classy-nav-container {
+    .header-area .famie-main-menu .classy-nav-
+     {
       position: relative;
       z-index: 1; }
       .header-area .famie-main-menu .classy-nav-container .container {
@@ -596,7 +597,9 @@ input:focus {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 300px; }
+  height: 300px;
+  border: 4px solid #77b122 ;
+   }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .breadcrumb-area {
       height: 240px; } }
@@ -665,7 +668,8 @@ input:focus {
 
 .benefits-thumbnail {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+   border: 4px solid #77b122 ; }
   .benefits-thumbnail img {
     border-radius: 3px; }
 
@@ -684,7 +688,9 @@ input:focus {
 .famie-video-play {
   position: relative;
   z-index: 1;
-  border-radius: 50%; }
+  border-radius: 50%; 
+  border: 4px solid #77b122;
+}
   .famie-video-play::after {
     position: absolute;
     content: '';
@@ -907,7 +913,8 @@ input:focus {
           -ms-flex: 0 0 50px;
           flex: 0 0 50px;
           max-width: 50px;
-          width: 50px; } }
+          width: 50px;
+           } }
       .testimonial-slides .single-slide .testi-text .quote-icon img {
         width: auto !important; }
     .testimonial-slides .single-slide .testi-text h5 {
@@ -926,14 +933,16 @@ input:focus {
       .testimonial-slides .single-slide .testimonial-thumbnail-name {
         margin-left: 50px; } }
     .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail {
-      width: 90px;
-      border-radius: 50%;
-      border: 3px solid #77b122; }
+      width: 10%;
+      height: 10%;
+      border-radius: 20%;
+      border: 3px solid #ff8c00; }
       @media only screen and (max-width: 767px) {
         .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail {
-          width: 60px; } }
+          width: 90px;
+          height: 90px; } }
       .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-thumbnail img {
-        border-radius: 50%; }
+        border-radius: 20%; }
     .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name {
       margin-left: 30px; }
       @media only screen and (max-width: 767px) {
@@ -946,7 +955,7 @@ input:focus {
           .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h5 {
             font-size: 16px; } }
       .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h6 {
-        color: #77b122;
+        color: #ff8c00;
         margin-bottom: 0; }
         @media only screen and (max-width: 767px) {
           .testimonial-slides .single-slide .testimonial-thumbnail-name .testimonial-name h6 {
@@ -987,12 +996,23 @@ input:focus {
 
 .single-team-member {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  border-width: 2px;
+  
+  
+   }
   .single-team-member .team-img {
-    position: relative;
-    z-index: 1; }
+    position:relative;
+    z-index: 1;
+    width: 180px;
+    height: 220px;
+    border-color: black;
+     }
     .single-team-member .team-img img {
-      width: 100%; }
+      width: 100%;
+      height: 100%;
+       border: 3px solid #ff8c00;
+       }
     .single-team-member .team-img::after {
       -webkit-transition-duration: 500ms;
       -o-transition-duration: 500ms;
@@ -1006,7 +1026,8 @@ input:focus {
       left: 0;
       z-index: 2;
       opacity: 0;
-      visibility: hidden; }
+      visibility: hidden;
+       }
     .single-team-member .team-img .team-social-info {
       position: absolute;
       z-index: 99;
@@ -1030,7 +1051,9 @@ input:focus {
         .single-team-member .team-img .team-social-info a:focus, .single-team-member .team-img .team-social-info a:hover {
           background-color: #77b122;
           color: #ffffff;
-          border-color: #77b122; }
+          border-color: #77b122;
+          
+           }
   .single-team-member .team-member-info {
     position: relative;
     z-index: 1;
