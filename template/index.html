@@ -324,20 +324,18 @@
           </div>
         </div>
       </div>
-      <!-- Newsletter Form -->
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
-          <form action="#" method="post">
-            <input type="text" class="form-control" placeholder="Enter your email">
+          <form action="sendmail" method="post">
+          {% csrf_token %}
+            <input type="email" class="form-control" name="Email" placeholder="Your Email" required id="id_Email">
             <button type="submit" class="btn famie-btn">Subscribe</button>
           </form>
         </div>
       </div>
     </div>
   </section>
-  <!-- ##### Newsletter Area End ##### -->
 
-  <!-- ##### Contact Area Start ##### -->
   <section class="contact-area section-padding-100-0">
     <div class="container">
       <div class="row justify-content-between">

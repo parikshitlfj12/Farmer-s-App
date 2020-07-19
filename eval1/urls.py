@@ -28,5 +28,6 @@ urlpatterns = [
     path('shop/addtocart', views.addtocart),
     path('checkout', views.checkout),
     path('changepass', views.changepass),
-    path('change', views.change)
+    path('change', views.change),
+    path('sendmail', views.sendmail)
 ]

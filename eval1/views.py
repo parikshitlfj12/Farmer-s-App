@@ -93,6 +93,8 @@ def contact(request) :
         # message = 'Thank you for contacting us! Our Customer Care Support will shortly call you.'
         # recepient = str(sub['Email'].value())
         # send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+
+        
         # # Send SMS
         # username = request.POST['name']
         # email = request.POST['Email']
@@ -113,6 +115,14 @@ def contact(request) :
         # return render(request, 'index.html', {'recepient': recepient})
     return render(request, 'contact.html', {'form':sub})
     # return render(request, 'contact.html')
+
+def sendmail(request):
+    sub = Form(request.POST)
+    subject = 'Happy Farm Welcomes You.'
+    message = 'Thank you for contacting us! Our Customer Care Support will shortly call you.'
+    recepient = str(sub['Email'].value())
+    send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+    return redirect('http://localhost:8000/')
 
 def changepass(request) :
     return render(request, 'changepass.html')
