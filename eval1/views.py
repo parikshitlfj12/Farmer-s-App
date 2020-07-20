@@ -12,8 +12,8 @@ import random
 
 def home(request) :
     if request.session.has_key('is_Logged'):
-        name = request.COOKIES['username']
-        password = request.COOKIES['password']
+        name = request.COOKIES.get('username')
+        password = request.COOKIES.get('password')
         logoutbutton = "LogOut"
         return render(request, 'index.html', {'username': name, 'password': password, 'logout': logoutbutton})
     else:
@@ -117,7 +117,13 @@ def contact(request) :
         return redirect('http://localhost:8000')
         # 
         # return render(request, 'index.html', {'recepient': recepient})
-    return render(request, 'contact.html', {'form':sub})
+    elif request.session.has_key('is_Logged'):
+        name = request.COOKIES.get('username')
+        password = request.COOKIES.get('password')
+        logoutbutton = "LogOut"
+        return render(request, 'contact.html', {'username': name, 'password': password, 'logout': logoutbutton})
+    else:
+        return render(request, 'contact.html')
     # return render(request, 'contact.html')
 
 def sendmail(request):
@@ -135,7 +141,13 @@ def change(request):
     return render(request, 'login.html')
 
 def about(request) :
-    return render(request, 'about.html')
+    if request.session.has_key('is_Logged'):
+        name = request.COOKIES.get('username')
+        password = request.COOKIES.get('password')
+        logoutbutton = "LogOut"
+        return render(request, 'about.html', {'username': name, 'password': password, 'logout': logoutbutton})
+    else:
+        return render(request, 'about.html')
 
 def addtocart(request):
     return render(request, 'shop.html')

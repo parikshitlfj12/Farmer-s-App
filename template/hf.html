@@ -59,12 +59,14 @@
                   <li><a href="http://localhost:8000/contact">Contact</a></li>
                   <li><a href="http://localhost:8000/contact">{{username}}</a></li>
                 </ul>
+                {% if logout %}
                 <div id="cartIcon">
                   <a href="http://localhost:8000/checkout">
                     <i class="icon_cart_alt"></i>
                     <span class="cart-quantity">2</span>
                   </a>
                 </div>
+                {% endif %}
                 <ul style="margin-left:80px">
                 {% if not logout %}
                   <li class="active"><a href="http://localhost:8000/account/user-login">Login</a></li>

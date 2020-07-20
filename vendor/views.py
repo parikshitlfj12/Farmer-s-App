@@ -42,14 +42,6 @@ def add_new_product(request):
         form = ProductForm() 
         return render(request, 'vendor/products.html') 
 
-
-def coupons(request): 
-  vendorname = request.COOKIES['vendorname']
-  if request.method == "POST":
-    return(render(request, 'vendor/coupons.html',{'vendorname': vendorname}))
-  else: 
-    return(render(request, 'vendor/coupons.html',{'vendorname': vendorname}))
-
 def aboutme(request): 
   if request.session.has_key('vendor_is_logged'):
     vendorname = request.COOKIES['vendorname']

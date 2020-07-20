@@ -8,7 +8,10 @@ from django.template import RequestContext
 
 def logout(request):
   del request.session['is_Logged']
-  return render(request, 'index.html')
+  response = render(request, 'index.html')
+  response.delete_cookie("username")
+  response.delete_cookie("password")
+  return response
 
 def userLogin(request): 
   if request.method=='POST':

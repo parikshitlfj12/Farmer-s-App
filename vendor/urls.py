@@ -23,7 +23,6 @@ urlpatterns = [
     path('orders/', views.orders),
     path('signout/', views.signOut),
     path('products/', views.products),
-    path('coupons/', views.coupons),
     path('aboutme/', views.aboutme),
     path('products/add-new-products/',views.add_new_product)
 ]
