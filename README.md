@@ -9,14 +9,14 @@ _**User App**_
 _**Vendor Services**_
 _**Customer Service Support**_
 
-1. **User App** -
+1. **User App** - <br />
 _Description_ - The User app is normal as an ecommerce application where you can buy stuff online. It got different features. Like Shopping cart, Checkout, Orders Details. The payment gateway Paypal is also included. 
 _For less literate_ people we have this feature of people adding their phone number and email address form submission. A text message from twilio API would be send and Email would be send to the user about the company. After than a customer care support will call them so as to clear their doubts.
 
-2. **Vendor Services** -
+2. **Vendor Services** - <br />
 _Description_ - The vendor service panel is at the url localhost:8080/vendor. Here we have a dashboard for vendor to manage their inventory and stock. They can add new products, details about them and delete them as well. Another interesting feature we have is whenever an order is placed from the _user App_ . Vendor has a customer list where it will be shown.
 
-1. **Customer Service Support** -
+3. **Customer Service Support** - <br /> 
 _Description_ - The customer support also maintains a dashboard where whenever a user asks for help. They submit their number on the user app and that number will all the other details about the customer will be shown here. What the customer support panel has to do is to make a call and clear all of their doubts. As soon as the customer is satisfied the service people toggles the status to complete and close the case.
 
 
@@ -27,12 +27,12 @@ Django, PostGreSQL, HTML, CSS, JS, Bootstrap, JQuery.
 API's include Twilio, Gmail, Paypal.
 
 # Pre-requisite - 
-*Django. https://docs.djangoproject.com/en/3.0/topics/install/ .
-*PostgreSQL. https://www.postgresql.org/download/
-*To operate on API's create developer's account for all of them.
-*Twilio - https://www.twilio.com/try-twilio
-*Paypal - https://www.paypal.com/signin/client?flow=provisionUser&country.x=US&locale.x=en_US
-*Gmail - https://console.developers.google.com/
+* Django. https://docs.djangoproject.com/en/3.0/topics/install/ .
+* PostgreSQL. https://www.postgresql.org/download/
+* To operate on API's create developer's account for all of them.
+* Twilio - https://www.twilio.com/try-twilio
+* Paypal - https://www.paypal.com/signin/client?flow=provisionUser&country.x=US&locale.x=en_US
+* Gmail - https://console.developers.google.com/
 
 # Pre-running setup-
 1. Before running the server make sure your database (PostgreSQL) is connected to your django application.
