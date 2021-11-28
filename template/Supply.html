@@ -1,0 +1,125 @@
+{% extends 'hf.html' %}
+{% block content %}
+
+	{% load static %}
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formutil.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formmain.css'%}">	
+	<link rel="icon" type="image/png" href={% static 'table/images/icons/favicon.ico"' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/bootstrap/css/bootstrap.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/animate/animate.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/select2/select2.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/perfect-scrollbar/perfect-scrollbar.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/util.css' %}>
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/main.css' %}>
+
+	<div class="limiter">
+	
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Date</th>
+								<th class="column6" >Price</th>
+								<th class="column6" >Name</th>
+								<th class="column6" ></th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for event in data  %}
+						<tr>
+									<td class="column1">{{event.date}}</td>
+									<td class="column6">RS {{event.price}}</td>
+									<td class="column6"> {{event.item}}</td>
+									<td class="column6"><img onclick="addingredients('{{event.item}}')" src="https://img.icons8.com/color/48/000000/plus.png"/></li></td>
+								</tr>
+						{% endfor%}
+								
+								
+								
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+                <div style="margin-bottom: 100px;">
+                         {% for message in messages%}
+                         <h1> {{message}}</h1>
+                        {% endfor %}
+
+                    </div>
+                <form class="login100-form validate-form" method="POST" action="Supply">
+				{% csrf_token%}
+					<span class="login100-form-title p-b-70">
+						ADD PRODUCT
+					</span>
+					<span class="login100-form-avatar">
+						<img src="{% static 'img/avatar-01.jpg' %}" alt="AVATAR">
+					</span>
+
+					<div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="Order_ID">
+						<span class="focus-input100" data-placeholder="Order_ID"></span>
+                    </div>
+                    <div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="Name">
+						<span class="focus-input100" data-placeholder="Name"></span>
+                    </div>
+                    <div class="wrap-input100 m-b-35 m-t-40">
+						<input id="Ingredients"  class="input100" type="text" name="Ingredients">
+						<span class="focus-input100" data-placeholder=""></span>
+					</div>
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="number" step="any" name="Weight">
+						<span class="focus-input100" data-placeholder="Weight"></span>
+					</div>
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="number" name="Price">
+						<span class="focus-input100" data-placeholder="Price"></span>
+                    </div>
+                   
+
+
+					
+
+
+					<div class="container-login100-form-btn m-b-40">
+						<button type="submit" class="login100-form-btn">
+							Add Product
+						</button>
+                    </div>
+                    
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+<script>
+function addingredients(ing){
+	let input=document.getElementById("Ingredients")
+	if(input.value === "")
+	{
+		input.value=ing;
+	}
+	else{
+		input.value=input.value+","+ing;
+	}
+
+}
+
+</script>
+{% endblock %}

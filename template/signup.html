@@ -8,7 +8,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" method="POST" action="signuppost">
+				<form class="login100-form validate-form" method="POST" action="register">
 				{% csrf_token%}
 					<span class="login100-form-title p-b-70">
 						Welcome Sign-Up
@@ -35,12 +35,8 @@
 					<div class="wrap-input100 m-b-35">
 						<input class="input100" type="text" name="phone">
 						<span class="focus-input100" data-placeholder="Phone Number"></span>
-					</div>
 
-					<div class="wrap-input100 m-b-50">
-						<input class="input100" type="text" name="buysell">
-						<span class="focus-input100" data-placeholder="Buyer / Seller"></span>
-					</div>
+					
 
 					<div class="container-login100-form-btn m-b-40">
 						<button type="submit" class="login100-form-btn">

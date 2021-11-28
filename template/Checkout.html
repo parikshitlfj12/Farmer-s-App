@@ -1,0 +1,142 @@
+
+{% extends 'hf.html'%}
+{% load static %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href={% static 'table/images/icons/favicon.ico"' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/bootstrap/css/bootstrap.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/animate/animate.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/select2/select2.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/perfect-scrollbar/perfect-scrollbar.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/util.css' %}>
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/main.css' %}>
+<!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formutil.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formmain.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/try.css' %}">
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Date</th>
+								<th class="column2">Order ID</th>
+								<th class="column3">Name</th>
+                                <th class="column4">Ingredients</th>
+								<th class="column5">Weight</th>
+								<th class="column6" >Price</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+				
+						<tr>
+									<td class="column1">{{data.date}}</td>
+									<td class="column2">{{data.order_id}}</td>
+									<td class="column3">{{data.productname}}</td>
+									<td class="column4">{{data.ingredients}}</td>
+									<td class="column5">{{data.weight}}</td>
+									<td class="column6">RS {{data.price}}</td>
+								</tr>
+						
+								
+								
+								
+						</tbody>
+					</table>
+
+                    <div class="mgintop" >
+		<div class="container-login100" >
+			<div class="wrap-login100 p-t-85 p-b-20">
+                <div style="margin-bottom: 100px;">
+                         {% for message in messages%}
+                         <h1> {{message}}</h1>
+                        {% endfor %}
+
+                    </div>
+                <form class="login100-form validate-form" method="POST" action="{{data.id}}">
+				{% csrf_token%}
+					<span class="login100-form-title p-b-70">
+						Enter Details
+					</span>
+					<span class="login100-form-avatar">
+						<img src="{% static 'img/avatar-01.jpg' %}" alt="AVATAR">
+					</span>
+
+					
+                    <div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="Name">
+						<span class="focus-input100" data-placeholder="Name"></span>
+                    </div>
+                    
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="number" step="any" name="PHONE">
+						<span class="focus-input100" data-placeholder="PHONE"></span>
+					</div>
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="text" name="Adress">
+						<span class="focus-input100" data-placeholder="Adress"></span>
+                    </div>
+                   
+
+
+					
+
+
+					<div class="container-login100-form-btn m-b-40">
+						<button type="submit" class="login100-form-btn">
+							Enter details
+						</button>
+                    </div>
+                    
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+                    
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+{% endblock%}

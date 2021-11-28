@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Happy Farm</title>
+  <title>Zenatix</title>
   <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
@@ -23,11 +23,11 @@
           <div class="col-12">
             <div class="top-header-content d-flex align-items-center justify-content-between">
               <div class="top-header-meta">
-                <p>Welcome to <span>Happy Farm</span>, we hope you will enjoy our products and have good experience</p>
+                <p>Welcome to <span>Zenatix</span>, we hope you will enjoy our products and have good experience</p>
               </div>
               <div class="top-header-meta text-right">
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sourav.y18@iiits.in</span></a>
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +84 223 9000</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: ayush.g18@iiits.in</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: 9411372899</span></a>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
       <div class="classy-nav-container breakpoint-off">
         <div class="container-fluid">
           <nav class="classy-navbar justify-content-between" id="famieNav">
-            <a href="/" class="nav-brand"><img src="{% static './img/logo.jfif' %}"alt=""></a>
+            <a href="/" class="nav-brand">Zenatix Solutions</a>
             <div class="classy-navbar-toggler">
               <span class="navbarToggler"><span></span><span></span><span></span></span>
             </div>
@@ -53,21 +53,29 @@
               <!-- Navbar Start -->
               <div class="classynav">
                 <ul>
-                  <li class="active"><a href="http://localhost:8000">Home</a></li>
-                  <li><a href="http://localhost:8000/about">About</a></li>
-                  <li><a href="http://localhost:8000/shop">Shop</a></li>
-                  <li><a href="http://localhost:8000/contact">Contact</a></li>
+
+                  <li class="active"><a href="http://localhost:8000/AddIngredients">ADD Ingredients</a></li>
+                  <li><a href="http://localhost:8000/products">Products</a></li>
+                  <li><a href="http://localhost:8000/Supply">ADD Products</a></li>
+                  <li><a href="http://localhost:8000/history">History</a></li>
                 </ul>
                 <div id="cartIcon">
-                  <a href="#">
+                  <a href="http://localhost:8000/history">
                     <i class="icon_cart_alt"></i>
                     <span class="cart-quantity">2</span>
                   </a>
                 </div>
                 <ul style="margin-left:80px">
-                  <li class="active"><a href="http://localhost:8000/login">Login</a></li>
-                  <li><a href="http://localhost:8000/signup">SignUp</a></li>
-                </ul> 
+
+                  {% if user.is_authenticated %}
+                     <li class="active" style="color: #273c75;">HELLO,  {{  user.first_name}}</li>
+                   <li class="active"><a href="signup/logout">Logout</a></li>
+                    {% else %}
+                  <li class="active"><a href="http://localhost:8000/signup/login">Login</a></li>
+                 
+                   <li><a href="http://localhost:8000/signup/register">Signup</a></li>
+                  {% endif %}
+                  </ul> 
               </div>
               <!-- Navbar End -->
             </div>
@@ -102,33 +110,17 @@
           <!-- Single Footer Widget Area -->
           <div class="col-12 col-sm-6 col-lg-3 pr-0 ">
             <div class="footer-widget mb-80">
-              <a href="#" class="d-block m-b-30 mt-0" style="font-size:35px; color:green">Happy Farm</a>
-              <p style="font-size:16px">Happy Farm with you for you always</p>
+              <a href="#" class="d-block m-b-30 mt-0" style="font-size:35px; color:green">Zenatix</a>
+              <p style="font-size:16px">Zenatix with you for you always</p>
               <div class="contact-info">
                 <p><i class="fa fa-map-pin" aria-hidden="true"></i><span>BH1, Boys Hostel, IIIT Sricity, Andhra Pradesh, India</span></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i><span>sourav.y18@iiits.com</span></p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i><span>ayush.g18@iiits.in</span></p>
                 <p><i class="fa fa-phone" aria-hidden="true"></i><span>+84 223 9000</span></p>
               </div>
             </div>
           </div>
 
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">QUICK LINK</h5>
-              <!-- Footer Widget Nav -->
-              <nav class="footer-widget-nav">
-                <ul>
-                  <li><a href="http://localhost:8000/">Home</a></li>
-                  <li><a href="http://localhost:8000/about">About</a></li>
-                  <li><a href="http://localhost:8000/shop">Shop</a></li>
-                  <li><a href="http://localhost:8000/contact">Contact Us</a></li>
-                  <li><a href="http://localhost:8000/vendor/vendor-login">Vendor Login</a></li>
-                  <li><a href="http://localhost:8000/login">User Login</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+          
 
           <!-- Single Footer Widget Area -->
           <div class="col-12 col-sm-6 col-lg-3">

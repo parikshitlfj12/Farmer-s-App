@@ -1,0 +1,82 @@
+{% extends 'hf.html'%}
+{% load static %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href={% static 'table/images/icons/favicon.ico"' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/bootstrap/css/bootstrap.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/animate/animate.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/select2/select2.min.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/vendor/perfect-scrollbar/perfect-scrollbar.css' %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/util.css' %}>
+	<link rel="stylesheet" type="text/css" href={% static 'table/css/main.css' %}>
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Date</th>
+								<th class="column2">Product </th>
+								<th class="column3"> BuyerName</th>
+                                <th class="column4">Adress</th>
+								<th class="column5">Weight</th>
+								<th class="column6" >Phone</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+						{% for event in data  %}
+						<tr>
+									<td class="column1">{{event.date}}</td>
+									<td class="column2">{{event.productname}}</td>
+									<td class="column3">{{event.name}}</td>
+									<td class="column4">{{event.adress}}</td>
+									<td class="column5">{{event.phone}}</td>
+									<td class="column6">{{event.price}}</td>
+								</tr>
+						{% endfor%}
+								
+								
+								
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+{% endblock%}

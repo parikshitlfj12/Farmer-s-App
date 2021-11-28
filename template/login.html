@@ -9,7 +9,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" method="POST" action="loginpost">
+
+								<div>
+            					{% for message in messages%}
+            					<h3> {{message}}</h3>
+            					{% endfor %}
+        
+       						</div>
+				<form class="login100-form validate-form" method="post" action="login">
 				{% csrf_token %}
 					<span class="login100-form-title p-b-70">
 						Welcome Log-In
@@ -24,7 +31,7 @@
 					</div>
 
 					<div class="wrap-input100 m-b-35">
-						<input class="input100" type="text" name="passwd">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
@@ -53,6 +60,9 @@
 							<a href="/signup" class="txt2">
 								Sign up
 							</a>
+
+
+							
 						</li>
 					</ul>
 				</form>

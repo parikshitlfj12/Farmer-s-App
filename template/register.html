@@ -1,0 +1,77 @@
+{% extends 'hf.html' %}
+{% block content %}
+
+	{% load static %}
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formutil.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/formmain.css'%}">	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+                <div style="margin-bottom: 100px;">
+                         {% for message in messages%}
+                         <h1> {{message}}</h1>
+                        {% endfor %}
+
+                    </div>
+                <form class="login100-form validate-form" method="POST" action="register">
+				{% csrf_token%}
+					<span class="login100-form-title p-b-70">
+						Welcome Sign-Up
+					</span>
+					<span class="login100-form-avatar">
+						<img src="{% static 'img/avatar-01.jpg' %}" alt="AVATAR">
+					</span>
+
+					<div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="first_name">
+						<span class="focus-input100" data-placeholder="first name"></span>
+                    </div>
+                    <div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="last_name">
+						<span class="focus-input100" data-placeholder="last name"></span>
+                    </div>
+                    <div class="wrap-input100 m-b-35 m-t-40">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="username"></span>
+					</div>
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="email" name="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 m-b-35">
+						<input class="input100" type="password" name="password1">
+						<span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+                    <div class="wrap-input100 m-b-35">
+						<input class="input100" type="password" name="password2">
+						<span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+                    
+                    
+
+
+					
+
+
+					<div class="container-login100-form-btn m-b-40">
+						<button type="submit" class="login100-form-btn">
+							Sign Up
+						</button>
+                    </div>
+                    <div>
+                         {% for message in messages%}
+                         <h3> {{message}}</h3>
+                        {% endfor %}
+
+                    </div>
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
